@@ -1,0 +1,122 @@
+<!doctype html>
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  <meta name="google-site-verification" content="Nhfbc4HXgBeRib2oTLMeKOV9bdzwRhfNc8SDhxie6zw" />
+  
+  {%- if settings.favicon -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  {%- endif -%}
+
+  {%- include 'seo-title' -%}
+  <title>{{ seo_title }}</title>
+
+  {%- if page_description -%}
+  <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {%- include 'social-meta-tags' -%}
+
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {% include 'google-fonts' %}
+  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
+ 
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    window.theme = window.theme || {};
+    theme.strings = {
+      stockLabel: {{ 'products.product.stock_label' | t: count: '[count]' | json }},
+      cartSavings: {{ 'cart.general.savings_html' | t: savings: '[savings]' | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }}
+    };
+    theme.settings = {
+      cartType: {{ settings.cart_type | json }},
+      moneyFormat: {{ shop.money_format | json }},
+      themeVersion: "3.0.2"
+    };
+  </script>
+
+  {{ content_for_header }}
+  {% include 'oldIE-js' %}
+
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js' | script_tag }}
+
+  {% include 'defer-script' with 'vendor.js' %}
+
+  {% if settings.enable_currencies %}
+    <!--[if (gt IE 9)|!(IE)]><!--><script src="/services/javascripts/currencies.js" defer="defer"></script><!--<![endif]-->
+    <!--[if lte IE 9]><script src="/services/javascripts/currencies.js"></script><![endif]-->
+    {% include 'defer-script' with 'jquery.currencies.min.js' %}
+  {% endif %}
+
+  {% include 'defer-script' with 'theme.js' %}
+
+  {%- if template contains 'customers' -%}
+    {% include 'defer-shopify-script' with 'shopify_common.js' %}
+  {%- endif -%}
+</head>
+
+<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.enable_currencies %} currencies-enabled{% endif %}" data-transitions="{{ settings.animate_page_transitions }}">
+
+  {% if settings.animate_page_transitions %}
+    <script type="text/javascript">
+    window.setTimeout(function() { document.body.className += " loaded"; }, 25);
+    </script>
+  {% endif %}
+
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  <div id="PageContainer" class="page-container">
+    <div class="transition-body">
+
+    {% section 'header' %}
+
+      <main class="main-content" id="MainContent">
+        {{ content_for_layout }}
+      </main>
+
+      {% section 'footer' %}
+
+    </div>
+  </div>
+
+  {% section 'newsletter-popup' %}
+
+  {% if settings.cart_type == 'drawer' %}
+    {% include 'ajax-cart-template' %}
+  {% endif %}
+
+  {% if settings.enable_currencies %}
+    <span
+      id="CurrencyData"
+      class="hide"
+      data-shop-currency="{{ shop.currency }}"
+      data-default-currency="{{ settings.default_currency | default: shop.currency }}"
+      data-format="{{ settings.currency_format | default: 'money_with_currency_format' }}"
+      data-money-format="{{ shop.money_format | strip_html }}"
+      data-money-currency-format="{{ shop.money_with_currency_format | strip_html }}">
+    </span>
+  {% endif %}
+
+  {% include 'qty-selector-template' %}
+  {% include 'video-modal' %}
+  {% include 'photoswipe-template' %}
+  
+  <script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+    analytics.load("Sd7zrNmh6i8p2L9Z6C7l1RHKlG1tLQiw");
+    analytics.page();
+    }}();
+  </script>
+</body>
+</html>

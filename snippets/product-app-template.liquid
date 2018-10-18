@@ -1,0 +1,146 @@
+<div id="ProductSection-{{ section_id }}"
+  class="product-section"
+  itemscope itemtype="http://schema.org/Product"
+  data-section-id="{{ section_id }}"
+  data-section-type="product-template"
+  {% if settings.product_zoom_enable %}
+    data-image-zoom="true"
+  {% endif %}
+  {% if settings.inventory_enable %}
+    data-inventory="true"
+  {% endif %}
+  {% unless isModal %}
+    data-enable-history-state="true"
+  {% endunless %}
+  {% if isModal %}
+    data-lazyload-content="true"
+  {% endif %}>
+
+  {% include 'product-template-variables' %}
+
+  <div class="page-content">
+    <div class="page-width">
+
+      {% if settings.show_breadcrumbs and isModal != true %}
+        {% include 'breadcrumbs' %}
+      {% endif %}
+
+      <div class="grid">
+        <div class="grid__item {{ product_image_width }}">
+          {% include 'product-images', section_id: section_id, isModal: isModal, thumbnail_position: thumbnail_position %}
+        </div>
+
+        <div class="grid__item {{ product_description_width }}">
+
+          <div class="product-single__meta">
+            {% if settings.vendor_enable %}
+              <div class="product-single__vendor" itemprop="brand">{{ product.vendor }}</div>
+            {% endif %}
+
+            {% if settings.sku_enable %}
+              <p id="Sku-{{ section_id }}" class="product-single__sku">
+                {% if current_variant.sku %}
+                  {{ current_variant.sku }}
+                {% endif %}
+              </p>
+            {% endif %}
+
+            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+              {% if product.compare_at_price_max > product.price %}
+                {%- assign hide_sale_price = true -%}
+                {% if current_variant.compare_at_price %}
+                  {%- assign hide_sale_price = false -%}
+                {% endif %}
+                <span
+                  id="PriceA11y-{{ section_id }}"
+                  class="visually-hidden"
+                  aria-hidden="{{ hide_sale_price }}">
+                    {{ 'products.general.regular_price' | t }}
+                </span>
+                <span class="product__price-wrap-{{ section_id }}{% if hide_sale_price %} hide{% endif %}">
+                  <span id="ComparePrice-{{ section_id }}" class="product__price product__price--compare">
+                    {% if current_variant.compare_at_price > current_variant.price %}
+                      {{ current_variant.compare_at_price | money }}
+                    {% endif %}
+                  </span>
+                </span>
+                <span id="ComparePriceA11y-{{ section_id }}" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+              {% else %}
+                <span id="PriceA11y-{{ section_id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+              {% endif %}
+
+              
+
+              {% if settings.inventory_enable %}
+                {%- assign inventory_visible = false -%}
+                {% if current_variant.inventory_management == 'shopify' %}
+                  {%- assign inventory_visible = true -%}
+                {% endif %}
+                {% if current_variant.inventory_quantity == 0 %}
+                  {%- assign inventory_visible = false -%}
+                {% endif %}
+                <div
+                  id="ProductInventory-{{ section_id }}"
+                  class="product__inventory {% unless inventory_visible %}hide{% endunless %}"
+                  >
+                  {% if current_variant.available %}
+                    {{ 'products.product.stock_label' | t: count: current_variant.inventory_quantity }}
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+              <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+
+              <h1 style="font-size:38px">{{ product.title }}</h1>
+              
+              <h2 class="product-app__title">{{ product.metafields.pluginuseful.preamble }}</h2>
+              
+              <p>{{ product.metafields.pluginuseful.price }}</p>
+              
+              <p class="product-app__btn">
+                {% if product.metafields.pluginuseful.get-app-url %}
+                <a href="{{ product.metafields.pluginuseful.get-app-url }}" class="btn btn--secondary">GET APP</a>
+              	{% else %}
+                <em>Coming Soon</em>
+                {% endif %}
+              </p>
+              
+              {% unless section.settings.description_style == 'full' %}
+                <div class="product-single__description rte product-app__body" itemprop="description">
+                  {{ product.description }}
+                  <p class="product-app__btn">
+                    {% if product.metafields.pluginuseful.get-app-url %}
+                    <a href="{{ product.metafields.pluginuseful.get-app-url }}" class="btn btn--secondary">GET APP</a>
+                    {% else %}
+                    <em>Coming Soon</em>
+                    {% endif %}
+                  </p>
+                </div>
+
+                {% include 'product-additional-content', section_id: section_id %}
+              {% endunless %}
+            </div>
+
+            {% if social %}
+              {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if section.settings.description_style == 'full' %}
+        <div class="product-single__description-full rte" itemprop="description">
+          {{ product.description }}
+        </div>
+
+        {% include 'product-additional-content', section_id: section_id %}
+      {% endif %}
+    </div>
+
+    <script type="application/json" id="ProductJson-{{ section_id }}">
+      {{ product | json }}
+    </script>
+    
+  </div>
+</div>
