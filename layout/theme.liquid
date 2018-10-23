@@ -1,3 +1,4 @@
+<!-- git rulez -->
 <!doctype html>
 <!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"> <!--<![endif]-->
@@ -9,7 +10,7 @@
   <link rel="canonical" href="{{ canonical_url }}">
 
   <meta name="google-site-verification" content="Nhfbc4HXgBeRib2oTLMeKOV9bdzwRhfNc8SDhxie6zw" />
-  
+
   {%- if settings.favicon -%}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
   {%- endif -%}
@@ -25,9 +26,9 @@
 
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
   {% include 'google-fonts' %}
-  
+
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
-  
+
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
@@ -110,7 +111,7 @@
   {% include 'qty-selector-template' %}
   {% include 'video-modal' %}
   {% include 'photoswipe-template' %}
-  
+
   <script>
     !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
     analytics.load("Sd7zrNmh6i8p2L9Z6C7l1RHKlG1tLQiw");
