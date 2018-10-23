@@ -1,3 +1,4 @@
+<!-- 23 october daniel edited on shopify -->
 {% if image != blank %}
   {% if image.width > 180 %}{{ image | img_url: '180x' }} 180w {{ 180 | divided_by: image.aspect_ratio | round }}h,{% endif %}
   {% if image.width > 360 %}{{ image | img_url: '360x' }} 360w {{ 360 | divided_by: image.aspect_ratio | round }}h,{% endif %}
