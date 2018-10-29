@@ -1021,11 +1021,13 @@
           "blocks": {
             "product-image-row": {
               "type": "image-row",
-              "settings": {}
+              "settings": {
+              }
             },
             "product-text-and-image": {
               "type": "text-and-image",
-              "settings": {}
+              "settings": {
+              }
             },
             "product-background-image-text": {
               "type": "background-image-text",
@@ -1035,11 +1037,13 @@
             },
             "product-text-columns": {
               "type": "text-columns",
-              "settings": {}
+              "settings": {
+              }
             },
             "product-hero-video": {
               "type": "hero-video",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -1049,14 +1053,16 @@
             "product-text-columns",
             "product-hero-video"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "page-sections-template": {
           "type": "page-sections-template",
           "blocks": {
             "page-fading-images": {
               "type": "fading-images",
-              "settings": {}
+              "settings": {
+              }
             },
             "page-rich-text": {
               "type": "rich-text",
@@ -1068,7 +1074,8 @@
             },
             "page-text-columns": {
               "type": "text-columns",
-              "settings": {}
+              "settings": {
+              }
             },
             "page-background-image-text": {
               "type": "background-image-text",
@@ -1078,7 +1085,8 @@
             },
             "page-featured-collection": {
               "type": "featured-collection",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -1088,7 +1096,8 @@
             "page-background-image-text",
             "page-featured-collection"
           ],
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "content_for_index": [
