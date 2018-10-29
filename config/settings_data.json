@@ -441,25 +441,13 @@
               "button_label": "MORE DETAILS",
               "button_link": "shopify:\/\/products\/plug-in-backup"
             }
-          },
-          "1540817642635": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": false,
-              "image": "",
-              "title": "<p style=\"font-size: 38px; font-family: Montserrat; margin-bottom: 0px;\"><span style=\"font-weight: 900; color: #333060;\">PLUG IN<\/span> <span style=\"color: #000; font-weight: 500;\">GIT<\/span><\/p>",
-              "text": "<p>Two-way sync for your Shopify theme and GitHub<\/p>",
-              "button_label": "MORE DETAILS",
-              "button_link": "shopify:\/\/products\/plug-in-git"
-            }
           }
         },
         "block_order": [
           "1499790782828-0",
           "1499790782828-1",
           "1499790782828-2",
-          "1525178199449",
-          "1540817642635"
+          "1525178199449"
         ],
         "settings": {
           "title": "",
@@ -654,12 +642,49 @@
           "layout": "left",
           "divider": false
         }
+      },
+      "1540818403112": {
+        "type": "text-columns",
+        "blocks": {
+          "1540818403112-0": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": false,
+              "image": "",
+              "title": "<p style=\"font-size: 38px; font-family: Montserrat; margin-bottom: 0px;\"><span style=\"font-weight: 900; color: #333060;\">PLUG IN<\/span> <span style=\"color: #000; font-weight: 500;\">GIT<\/span><\/p>",
+              "text": "<p>Two-way sync for your Shopify theme and GitHub<\/p>",
+              "button_label": "MORE DETAILS",
+              "button_link": "shopify:\/\/products\/plug-in-git"
+            }
+          },
+          "1540818751617": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": false,
+              "image": "",
+              "title": "",
+              "text": "",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1540818403112-0",
+          "1540818751617"
+        ],
+        "settings": {
+          "title": "",
+          "align_text": "left",
+          "divider": false
+        }
       }
     },
     "content_for_index": [
       "1499790633921",
       "1499790529450",
       "1499790782828",
+      "1540818403112",
       "1537456176108",
       "1525450726718",
       "1499790731541",
