@@ -113,7 +113,7 @@
       "our-apps": {
         "type": "our-apps",
         "settings": {
-          "show_experts": true,
+          "appstitle": "Explore Our Apps",
           "appscollection": "shopify-apps"
         }
       },

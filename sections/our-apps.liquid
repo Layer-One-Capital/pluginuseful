@@ -1,147 +1,42 @@
-<footer class="site-footer navy white-text">
-<div class="wrapper">
-  <div class="navy-gradient absolute fullwidth fullheight"></div>
-  <div class="navy-gradient absolute fullwidth fullheight appshape"></div>
-  <div class="sp-20 hide-sm"></div>
-  <div class="page-width">
-    <div class="row pad-xs-10 pad-sm-20">
+<div class="offwhite bordertop">
+  <div class="page-width relative">
+    <div class="row center-xs pad-xs-60 pad-sm-80 pad-top-bottom">
+      <div class="col-xs-12">
+          <h2>{{ section.settings.appstitle }}</h2>
+      </div>
+      <div class="sp-10 show-sm"></div>
+      <div class="sp-10"></div>
+      <div class="appset">
+        {% for product in collections[section.settings.appscollection].products limit: 6 %}
 
-      <div class="col-xs-12 col-sm-6 col-md-3">
-          <h5 class="">{{ linklists.footer.title | escape }}</h5>
-          <ul class="slate">
-            {% for link in linklists.footer.links %}  
-            <li class="{% if link.active %}current{% endif %}">
-                <a href="{{ link.url }}">
-                {{ link.title }}
-                </a>
-            </li>
-            {% endfor %}
-          </ul>
+          {%- assign colour = product.metafields["global"]["Colour"] -%}
+          <a href="{{ product.url }}"><span class="rounded app-icon" style="background:#333060;background: {{ colour }}"><img src="{{ 'app-icon.svg' | asset_url }}" /></span></a>
+        
+        {% endfor %}
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-          <h5 class="">Our Apps</h5>
-          <ul class="slate">
-            {% for product in collections[section.settings.appscollection].products limit: 6 %}
-            
-              <li class="{% if link.active %}current{% endif %} ">
-                  <a href="{{ product.url }}">
-                  {{ product.title }}
-                  </a>
-              </li>
-            {% endfor %}
-          </ul>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-          <h5 class="">{{ linklists.support.title | escape }}</h5>
-          <ul class="slate">
-            {% for link in linklists.support.links %}  
-            <li class="{% if link.active %}current{% endif %}">
-                <a href="{{ link.url }}">
-                {{ link.title }}
-                </a>
-            </li>
-            {% endfor %}
-          </ul>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3 end-md">
-          <div class="sp-60"></div>
-          {%- if section.settings.show_experts -%} <img class="shopify-experts" src="{{ 'logo-shopify-experts.svg' | asset_url }}" />{%- endif -%}
-      </div>
-      <div class="sp-40"></div>
-      <div class="sp-10 show-md"></div>
-    </div>   
-  </div>
-
-  <div class="whitebordertop pad-xs-10 pad-sm-20 pad-md-0">
-    <div class="page-width">
-      <div class="row slate copyright pad-md-20 pad-left-right">
-        <div class="sp-30"></div>
-        <div class="col-xs-12 col-md-8 start-md">
-            {{ settings.company_info }}
-            <div class="sp-30"></div>
-        </div>
-        <div class="col-xs-12 col-md-4 end-md">
-            {{ settings.copyright }}
-            <div class="sp-30"></div>
-        </div>
-       
-      </div> 
+      <div class="sp-10"></div>
     </div>
   </div>
-
-   </div>
 </div>
-</footer>
-
-<!--<footer>
-
-  {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  <ul>
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-      {% if settings[social_link] != blank %}
-        <li>
-          <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-            {% include social_icon %}
-            <span class="icon-fallback-text">{{ social }}</span>
-          </a>
-        </li>
-      {% endif %}
-
-    {% endfor %}
-  </ul>
-
-  {% if section.settings.show_payment_icons %}
-    {% unless shop.enabled_payment_types == empty %}
-      <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
-      <ul class="payment-icons">
-        {% for type in shop.enabled_payment_types %}
-          <li>
-            {{ type | payment_type_svg_tag: class: 'icon' }}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endunless %}
-  {% endif %}
-
-  {%- assign footer_linklist = section.settings.footer_linklist -%}
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  {% comment %}
-
-  <div>
-    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
-  </div>
-
-  {% endcomment %}
-
-</footer>-->
 
 {% schema %}
   {
-    "name": "Footer",
+    "name": "Our Apps",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "show_experts",
-        "label": "Show Experts Logo",
-        "default": true
+        "type": "text",
+        "id": "appstitle",
+        "label": "Apps title"
       },
       {
         "type": "collection",
         "id": "appscollection",
         "label": "Apps Collection"
       }
-    ]
+    ],
+    "presets": [{
+      "name": "Our Apps",
+      "category": "Text"
+    }]
   }
-
 {% endschema %}

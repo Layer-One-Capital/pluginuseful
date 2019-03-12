@@ -131,6 +131,7 @@ h1 {
 }
 .normal {
   font-family:'Graphik', -apple-system, BlinkMacSystemFont, Helvetica Neue, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  font-weight: 400;
 }
 .medium, button, nav li {
   font-family: 'Graphik', -apple-system, BlinkMacSystemFont, Helvetica Neue, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
@@ -1129,6 +1130,7 @@ button.hamburger span span:last-child span {
     opacity:0;
     transition: opacity 0.6s ease-in;
   }
+
   .ani.in-view {
     opacity:1;
     transition: opacity 0.8s ease-in;
@@ -1138,6 +1140,13 @@ button.hamburger span span:last-child span {
     opacity:0;
     transition: opacity 0.8s ease;
   }
+
+@media all and (-ms-high-contrast:none) {
+  .seq, .ani.in-view.seq, .ani {
+    opacity:1 !important;
+  }
+}
+
   .ani.in-view.seq.show {
     opacity:1;
     transition: opacity 0.8s ease;
@@ -1216,6 +1225,7 @@ button.hamburger span span:last-child span {
 }
 main, #MainContent {
   background:#fff;
+  display:block;
 }
 #MainContent > .page-width, .shopify-section > .page-width {
   padding:40px;
