@@ -663,6 +663,8 @@ nav ul {
   }
   nav .site-nav li a {
     position:relative;
+    display:block;
+    height:20px !important;
   }
   nav .site-nav li a:after {
     content:"";
@@ -671,7 +673,7 @@ nav ul {
     position:absolute;
     height:1px;
     left:50%;
-    bottom: -41px;
+    bottom: -40px;
     transition:all 0.3s;
   }
   nav .site-nav li a:hover:after {
@@ -873,7 +875,7 @@ button.hamburger span span:last-child span {
   }
   .subnav nav li a:after {
     background:#333060;
-    bottom: -37px;
+    bottom: -41px;
   }
 
 /*——————————————————————————————————————————————————
