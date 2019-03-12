@@ -228,7 +228,7 @@ footer ul, footer ol, header ul, header ol, #mobilemenu ul {
 ol li, ul li {
   margin-bottom: 15px;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 16px;
 }
 @media only screen and (min-width: 62em) {
   ol li, ul li {
@@ -2569,7 +2569,7 @@ main, #MainContent {
    padding: 11px !important;
 }
 @media all and (max-width:62em) {
- flickity-prev-next-button {
+ .flickity-prev-next-button {
   display:none;
  }
 }
