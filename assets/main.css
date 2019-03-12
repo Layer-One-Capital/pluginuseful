@@ -1148,6 +1148,11 @@ button.hamburger span span:last-child span {
     opacity:1 !important;
   }
 }
+@media all and (max-width:768px) {
+  .seq, .ani.in-view.seq, .ani {
+    opacity:1 !important;
+  }
+}
 
   .ani.in-view.seq.show {
     opacity:1;
