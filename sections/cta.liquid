@@ -1,0 +1,39 @@
+<div class="offwhite bordertop">
+  <div class="page-width relative">
+    <div class="row center-xs pad-xs-60 pad-sm-80 pad-top-bottom">
+      <div class="col-xs-12 ani">
+          <h2>{{ section.settings.homecta }}</h2>
+      </div>
+      <div class="sp-10"></div>
+      <a href="{{ section.settings.homectalink }}"><button class="blue fat">{{ section.settings.homectatext }}</button></a>
+      <div class="sp-10"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage CTA",
+    "settings": [
+      {
+        "type": "text",
+        "id": "homecta",
+        "label": "Home CTA"
+      },
+      {
+        "id": "homectatext",
+        "type": "text",
+        "label": "Home CTA Text"
+      },
+      {
+        "id": "homectalink",
+        "type": "text",
+        "label": "Home CTA Link"
+      }
+    ],
+    "presets": [{
+        "name": "Homepage CTA",
+        "category": "Text"
+    }]
+  }
+{% endschema %}

@@ -1,1 +1,112 @@
-{% section 'blog-template' %}
+<div class="page-width relative">
+    <div class="sp-30 show-md"></div>
+
+    {% paginate blogs.[settings.mainblog].articles by 5 %}
+    
+        {% for article in blogs.[settings.mainblog].articles %}
+        
+            {% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
+
+            {% comment %}
+            {% if blog.comments_enabled? or article.tags.size > 0 %}
+              <ul>
+                {% if blog.comments_enabled? %}
+                  <li>
+                    <a href="{{ article.url }}#comments">
+                      {{ 'blogs.comments.with_count' | t: count: article.comments_count }}
+                    </a>
+                  </li>
+                {% endif %}
+
+                {% if article.tags.size > 0 %}
+                  {% for tag in article.tags %}
+                    <li>
+                      <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+                      {% unless forloop.last %}, {% endunless %}
+                    </li>
+                  {% endfor %}
+                {% endif %}
+              </ul>
+            {% endif %}
+            {% endcomment %}
+
+            <div class="row ani seq">
+              <div class="sp-30 show-sm"></div>
+              <div class="col-xs-12 col-md-6 pad-xs-0 pad-sm-20 pad-md-40 pad-left-right">
+                <div class="rounded overflow">
+                  <a class="block hovergrow" href="{{ article.url }}" style="background: #eee url('{{ article.image.src | img_url: '1000x' }}') no-repeat center center;background-size:cover;"><img src="{{ '4-3.png' | asset_url }}" /></a>
+                </div>
+              </div>
+            
+              <div class="col-xs-12 col-md-6 pad-xs-0 pad-sm-20 pad-md-40 pad-left-right">
+                <div class="sp-30 hide-md"></div>
+                <a href="{{ article.url }}"><h2>{{ article.title }}</h2></a>
+                {% if article.excerpt.size > 0 %}
+                  {{ article.excerpt }}
+                {% else %}
+                  <p>
+                    {{ article.content | strip_html | truncatewords: 36 }}
+                  </p>
+                {% endif %}
+                <!--<div class="sp-20"></div><p>{{ 'blogs.article.author_on_date_html' | t: author: article.author, date: date }}</p>-->
+                <div class="sp-30"></div>
+                <a href="{{ article.url }}"><button class="blue 70">Continue Reading</button></a>
+              </div>
+
+        </div>
+
+        <div class="row ani seq pad-xs-0 pad-sm-20 blogdivider">
+            <div class="sp-10"></div>
+            <div class="sp-40"></div>
+            <div class="col-xs-12 borderbottom ani"></div>
+            <div class="sp-30 hide-sm"></div>
+            <div class="sp-20"></div>
+        </div>
+
+      {% endfor %}
+
+      {% if paginate.pages > 1 %}
+       <div class="row ani seq pad-xs-0 pad-sm-20 center-xs">
+          {% include 'pagination' %}
+        </div>
+      {% endif %}
+      {% endpaginate %}
+
+      <div class="sp-40"></div>
+</div>
+
+
+{% section 'our-apps' %}
+{% section 'subscribe' %}
+
+
+  {% comment %}
+  {% if current_tags %}
+    {% capture blog_title %}{{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}{% endcapture %}
+  {% endif %}
+
+  
+  {% if blog.all_tags.size > 0 %}
+    <h2>{{ 'blogs.general.categories' | t }}</h2>
+
+    <ul>
+      {% for tag in blog.all_tags %}
+
+        {% if current_tags contains tag %}
+          <li>{{ tag }}</li>
+        {% else %}
+          <li>{{ tag | link_to_tag: tag }}</li>
+        {% endif %}
+
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+
+  Article Previews
+  ====================
+  {% endcomment %}
+
+  
+
+  

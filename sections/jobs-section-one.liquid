@@ -1,0 +1,46 @@
+ <div class="row">
+    <div class="sp-30 show-sm"></div>
+    <div class="col-xs-12 col-md-6 pad-xs-0 pad-sm-20 pad-md-40 pad-left-right ani">
+      <h6>{{ section.settings.sectiononesubtitle }}</h6>
+      <h2>{{ section.settings.sectiononeheading }}</h2>
+    </div>
+    <div class="col-xs-12 col-md-6 pad-xs-0 pad-sm-20 ani">
+      <div class="sp-25"></div>
+        {{ section.settings.sectiononetext }}
+      <div class="sp-30"></div>
+    </div>
+  </div>
+  
+  <div class="row pad-xs-0 pad-sm-20">
+    <div class="sp-20"></div>
+    <div class="col-xs-12 borderbottom ani"></div>
+    <div class="sp-40 hide-sm"></div>
+    <div class="sp-20"></div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "Jobs Section One",
+    "settings": [
+       {
+        "type": "text",
+        "id": "sectiononesubtitle",
+        "label": "Sub Title"
+      },
+      {
+        "id": "sectiononeheading",
+        "type": "text",
+        "label": "Heading"
+      },
+      {
+        "id": "sectiononetext",
+        "type": "richtext",
+        "label": "Text"
+      }
+    ],
+    "presets": [{
+        "name": "Jobs Section One",
+        "category": "Text"
+    }]
+  }
+{% endschema %}

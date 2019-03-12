@@ -1,0 +1,39 @@
+<div class="offwhite bordertop">
+  <div class="page-width relative">
+    <div class="row center-xs pad-xs-60 pad-sm-80 pad-top-bottom">
+      <div class="col-xs-12">
+          <h2>{{ section.settings.jobstitle }}</h2>
+      </div>
+      <div class="sp-10"></div>
+      <a href="{{ section.settings.jobslink }}"><button class="blue fat">{{ section.settings.jobscta }}</button></a>
+      <div class="sp-10"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Join The Team",
+    "settings": [
+	    {
+        "type": "text",
+        "id": "jobstitle",
+        "label": "Jobs title"
+      },
+      {
+        "type": "text",
+        "id": "jobscta",
+        "label": "Jobs CTA"
+      },
+	  {
+        "id": "jobslink",
+        "type": "page",
+        "label": "Jobs Page"
+      }
+    ],
+    "presets": [{
+        "name": "Join The Team",
+        "category": "Text"
+    }]
+  }
+{% endschema %}

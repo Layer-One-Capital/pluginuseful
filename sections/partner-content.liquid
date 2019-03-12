@@ -1,0 +1,126 @@
+<div class="row">
+
+    <div class="sp-30 show-sm"></div>
+    
+	<div class="col-xs-12 col-md-6 pad-xs-0 pad-sm-20 pad-md-40 pad-lg-60 pad-left-right ani">
+      <h6>{{ section.settings.heading }}</h6>
+      <h2>{{ section.settings.text  | remove: '<p>'  | remove: '</p>'}}</h2>
+    </div>
+    
+	<div class="col-xs-12 col-md-6 pad-xs-0 pad-sm-20 ani">
+      <div class="sp-25"></div>
+        
+        {% form 'contact' %}
+            {% if form.errors %}
+            <div class="row">
+                <div class="col-xs-12 red-text">
+                    {{ form.errors | default_errors }}
+                    <br/>
+                </div>
+            </div>
+            {% endif %}
+            {% if form.posted_successfully? %}
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="form-success">
+                    👍 {{ 'contact.form.post_success' | t }}
+                    </p>
+                    <br/>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="row">
+                <div class="col-xs-12 col-md">
+                    <h5>{{ 'contact.form.name' | t }}</h5>
+                    <input  type="text"
+                            name="contact[name]"
+                            id="ContactFormName"
+                            value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+                    <br/>
+                </div>
+                
+                <div class="col-xs-12 col-md-1">
+                
+                </div>
+
+                <div class="col-xs-12 col-md">
+                    <h5>{{ 'contact.form.email' | t }}</h5>
+                    <input  type="email"
+                            name="contact[email]"
+                            id="ContactFormEmail"
+                            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                            spellcheck="false"
+                            autocomplete="off"
+                            autocapitalize="off">
+                    <br/>
+                </div>
+
+                <div class="col-xs-12">
+                    <h5>Company Website</h5>
+                    <input  type="text"
+                            name="contact[company]"
+                            id="ContactFormCompanyWebsite">
+                    <br/>
+                </div>
+                <div class="col-xs-12">
+                    <h5>Questions or comments</h5>
+                    <textarea   type="text" 
+                                rows="10"
+                                name="contact[body]"
+                                id="ContactFormMessage"
+                                >
+                                {%- if form.body -%}
+                                {{- form.body -}}
+                                {%- endif -%}
+                    </textarea>
+                    <br/>
+                </div>
+
+                <div class="col-xs-12">
+                    <button class="blue fat full" value="{{ 'contact.form.send' | t }}">Submit</button>
+                </div>
+                
+            </div>
+   
+            {% comment %}
+            <label for="ContactFormPhone">{{ 'contact.form.phone' | t }}</label>
+            <input type="tel"
+                name="contact[phone]"
+                id="ContactFormPhone"
+                placeholder="{{ 'contact.form.phone' | t }}"
+                value="{% if form[phone] %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+                pattern="[0-9\-]*">
+
+                <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
+            {% endcomment %}
+
+        {% endform %}
+      
+      <div class="sp-30"></div>
+    </div>
+    <div class="sp-20 show-md"></div>
+
+</div>
+  
+{% schema %}
+  {
+    "name": "Partner Page",
+    "settings": [
+	  {
+        "type": "text",
+        "id": "heading",
+        "label": "Sub Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Heading"
+      }
+    ],
+    "presets": [{
+        "name": "Partner Page",
+        "category": "Text"
+    }]
+  }
+{% endschema %}

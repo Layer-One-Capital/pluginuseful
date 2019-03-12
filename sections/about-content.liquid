@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-xs-12 col-md-6 pad-xs-0 pad-sm-40 ani seq">
+        <img src="{{ section.settings.image | img_url: '1500x' }}" />
+        <div class="sp-20"></div>
+    </div>
+    <div class="col-xs-12 col-md-6 pad-xs-0 pad-sm-40 ani seq">
+        <h2>{{ section.settings.heading }}</h2>
+        <p>{{ section.settings.text }}</p>
+        <div class="sp-30"></div>
+    </div>
+  </div>
+  
+
+
+{% schema %}
+  {
+    "name": "About Content",
+    "settings": [
+	    {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "label": "Heading"
+      },
+      {
+        "id": "text",
+        "type": "richtext",
+        "label": "Text"
+      }
+    ],
+    "presets": [{
+        "name": "About Content",
+        "category": "Text"
+    }]
+  }
+{% endschema %}

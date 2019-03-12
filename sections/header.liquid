@@ -1,211 +1,316 @@
-{%- assign main_menu = linklists[section.settings.main_menu_link_list] -%}
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available in the "Header" section in the theme editor.
 
-{% include 'drawer-menu' %}
-{% include 'cart-drawer' %}
+  Theme Store required settings
+  - Show announcement
+  - Text: message to announce
+  - Link: link of the announcement bar
 
-{%- assign template_name = template | replace: '.', ' ' | truncatewords: 2, '' | handle -%}
+  Theme Store optional settings
+  - Home page only: only shows on the home page
+{%- endcomment -%}
 
-{%- assign sticky_header = false -%}
-{% if section.settings.header_style == 'sticky' %}
-  {%- assign sticky_header = true -%}
-{% endif %}
-{%- assign overlay_header = false -%}
-{%- assign has_logo = false -%}
-{% if template_name == 'index' and section.settings.sticky_index %}
-  {%- assign overlay_header = true -%}
-{% endif %}
-{% if template_name == 'collection' and collection.image and section.settings.sticky_collection %}
-  {%- assign overlay_header = true -%}
-{% endif %}
 
-<style>
-  .site-nav__link {
-    font-size: {{ section.settings.type_navigation_size }}px;
-  }
-</style>
+<div id="mobilemenu" class="navy white-text pad-xs-40">
+  <div class="row">
+    <div class="col-xs-12">
+        <ul class="nav">
+          {% for link in linklists[section.settings.mobilemenu].links %}
+            {% if link.links != blank %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                  {% include 'icon-arrow-down' %}
+                </a>
+                <ul>
+                  {% for childlink in link.links %}
+                    <li class="{% if link.active %}current{% endif %}">
+                      <a href="{{ childlink.url }}">
+                        {{ childlink.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li class="{% if link.active %}current{% endif %}">
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        {%- if section.settings.show_button -%}
+          <ul class="hide-sm">
+            <div class="sp-40"></div>
+            <li class="cta">
+              <a href="{{ section.settings.button_link }}" target="_blank"><button class="nohover blue full" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</button></a>
+            </li>
+          </ul>
+        {%- endif -%}
+        
+    </div>
+  </div>
+</div> 
 
-<div data-section-id="{{ section.id }}" data-section-type="header-section">
-  <div class="header-wrapper{% if overlay_header %} header-wrapper--sticky is-light{% endif %}">
+<section data-section-id="{{ section.id }}" data-section-type="header">
 
-    {% if section.settings.show_announcement %}
-      {% include 'announcement-bar' %}
+    <!-- CART SEARCH LOGIN 
+    <a href="/cart">
+      {% include 'icon-cart' %}
+      {{ 'layout.cart.title' | t }}
+      ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
+    </a>
+
+    {% if shop.customer_accounts_enabled %}
+      <ul>
+        {% if customer %}
+          <li>
+            {% if customer.first_name != blank %}
+              {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
+              {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+            {% else %}
+              <a href="/account">{{ 'layout.customer.account' | t }}</a>
+            {% endif %}
+          </li>
+          <li>
+            {{ 'layout.customer.log_out' | t | customer_logout_link }}
+          </li>
+        {% else %}
+          <li>
+            {{ 'layout.customer.log_in' | t | customer_login_link }}
+          </li>
+          <li>
+            {{ 'layout.customer.create_account' | t | customer_register_link }}
+          </li>
+        {% endif %}
+      </ul>
     {% endif %}
 
-    <header class="site-header{%if section.settings.type_navigation_style %} site-header--heading-style{% endif %}" data-sticky="{{ sticky_header }}">
-      <div class="page-width">
-        <div class="header-layout header-layout--{{ section.settings.main_menu_alignment }}">
-          {% if section.settings.main_menu_alignment == 'center' %}
-            <div class="header-item">
-              <div class="site-nav medium-up--hide">
-                <div class="site-nav__item">
-                  <button type="button" class="site-nav__link site-nav__link--icon js-drawer-open-nav" aria-controls="NavDrawer">
-                    {% include 'icon-hamburger' %}
-                    <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          <div class="header-item header-item--logo{% if section.settings.main_menu_alignment == 'center' %} text-center{%endif %}">
-            {% include 'header-logo-block' %}
+    <form action="/search" method="get" role="search">
+      <label for="Search-{{ section.id }}" class="label-hidden">
+        {{ 'general.search.placeholder' | t }}
+      </label>
 
-            {% if section.settings.main_menu_alignment == 'left' %}
-              {% include 'header-desktop-nav', compress: true %}
-            {% endif %}
-          </div>
-          <div class="header-item text-right">
-            <div class="site-nav">
+      <input type="search"
+        name="q"
+        id="Search-{{ section.id }}"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'general.search.placeholder' | t }}">
 
-              {% if settings.enable_currencies %}
-                <div class="site-nav__item small--hide">
-                  {% include 'currency-picker', picker_id: 'header' %}
-                </div>
-              {% endif %}
+      <button type="submit" class="button">
+        {% include 'icon-search' %}
+        <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
+      </button>
+    </form>-->
 
-              {% if shop.customer_accounts_enabled %}
-                <a class="site-nav__link site-nav__link--icon small--hide" href="/account">
-                  {% include 'icon-user' %}
-                  <span class="icon__fallback-text">
-                    {% if customer %}
-                      {{ 'layout.customer.account' | t }}
-                    {% else %}
-                      {{ 'layout.customer.log_in' | t }}
-                    {% endif %}
-                  </span>
-                </a>
-              {% endif %}
-
-              {% if section.settings.header_search_enable %}
-                <a href="/search" class="site-nav__link site-nav__link--icon js-search-header js-no-transition">
-                  {% include 'icon-search' %}
-                  <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
-                </a>
-              {% endif %}
-
-              {% if section.settings.main_menu_alignment == 'left' %}
-                <button type="button" class="site-nav__link site-nav__link--icon site-nav--compress__menu js-drawer-open-nav" aria-controls="NavDrawer">
-                  {% include 'icon-hamburger' %}
-                  <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
-                </button>
-              {% endif %}
-
-              <a href="/cart" class="site-nav__link site-nav__link--icon js-drawer-open-cart js-no-transition" aria-controls="CartDrawer">
-                <span class="cart-link">
-                  {% include 'icon-cart' %}
-                  <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
-                  <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
-                </span>
+  {%- if section.settings.announcement_bar_enabled -%}
+   
+      {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
+        {%- if section.settings.announcement_bar_link != blank -%}
+          <div class="row navy pad-xs-10 white-text center-xs">
+            <div class="col-xs-12">
+              <a href="{{ section.settings.announcement_bar_link }}">
+                <h5>{{ section.settings.announcement_bar_text | escape }}</h5>
               </a>
             </div>
+          </div>
+        {%- else -%}
+         <div class="row navy pad-xs-10 white-text center-xs">
+            <div class="col-xs-12">
+              <h5>{{ section.settings.announcement_bar_text | escape }}</h5>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+    
+  {%- endif -%}
 
-          </div>
-        </div>
-        {% if section.settings.main_menu_alignment == 'center' %}
-          <div class="text-center">
-            {% include 'header-desktop-nav', compress: false %}
-          </div>
-        {% endif %}
+  <div class="header-wrapper blue relative overflow white-text">
 
-      </div>
-      <div class="site-header__search-container">
-        <div class="site-header__search">
-          <div class="page-width">
-            <form action="/search" method="get" class="site-header__search-form" role="search">
-              {% comment %}<input type="hidden" name="type" value="product">{% endcomment %}
-              <button type="submit" class="text-link site-header__search-btn">
-                {% include 'icon-search' %}
-                <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
-              </button>
-              <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" class="site-header__search-input" aria-label="{{ 'general.search.placeholder' | t }}">
-            </form>
-            <button type="button" class="js-search-header-close text-link site-header__search-btn">
-              {% include 'icon-close' %}
-              <span class="icon__fallback-text">{{ 'general.accessibility.close_modal' | t | json }}</span>
-            </button>
+    <div class="appshapeholderone"><div class="transparent whiteshadow appshape one"></div></div>
+    <div class="appshapeholdertwo"><div class="white-gradient appshape two"></div></div>
+  
+  <header class="site-header whiteborderbottom">
+    <div class="page-width pad-xs-0 pad-sm-20 pad-left-right">
+        <div class="header row middle-xs between-xs">
+          
+          <div class="pad-xs-15 pad-sm-20 start-xs">
+            <div class="row">
+
+              <div class="col ani seq">
+
+                  {% if template.name == 'index' %}
+                    <h1>
+                  {% else %}
+                    <div class="h1">
+                  {% endif %}
+                    <a href="/" class="logo-image">
+                      <img class="site-header__logo-image" src="{{ 'logo-dark.svg' | asset_url }}" />
+
+                        {% comment %}
+                        {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
+                         <img src="{{ section.settings.logo | img_url: image_size }}"
+                            srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                            alt="{{ section.settings.logo.alt | default: shop.name }}">-->
+                        {% else %}
+                          {{ shop.name }}
+                        {% endif %}
+                        {% endcomment %}
+
+                    </a>
+                  {% if template == 'index' %}
+                    </h1>
+                  {% else %}
+                    </div>
+                  {% endif %}
+              </div>
+
+              {%- if section.settings.show_shopify_logo -%}
+                
+                <div class="col middle-xs pad-xs-20 pad-left-right show-lg ani seq" >
+                  <div class="row middle-xs fullheight">
+                  <h4 class="no-margin-bottom">+</h4>
+                  </div>
+                </div>
+
+                <div class="col show-lg ani seq">
+                    <span class="site-header__logo-link">
+                      <img class="site-header__logo-image" src="{{ 'logo-shopify.svg' | asset_url }}" />
+                    </span>
+                </div>
+              {%- endif -%}
+
+            </div>
           </div>
+
+          <div class="end-xs">
+            <nav role="navigation">
+
+             <ul class="site-nav show-md" role="navigation" aria-label="Primary">
+               {% for link in linklists[section.settings.menu].links %}
+                  {% if link.links != blank %}
+                    <li class="{% if link.active %}current{% endif %} ani seq">
+                      <a href="{{ link.url }}">
+                        {{ link.title }}
+                        {% include 'icon-arrow-down' %}
+                      </a>
+                      <ul>
+                        {% for childlink in link.links %}
+                          <li>
+                            <a href="{{ childlink.url }}">
+                              {{ childlink.title }}
+                            </a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </li>
+                  {% else %}
+                    <li class="{% if link.active %}current{% endif %} ani seq">
+                      <a href="{{ link.url }}">
+                        {{ link.title }}
+                      </a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+
+              {%- if section.settings.show_button -%}
+                <ul class="show-sm">
+                  <li class="cta ani seq">
+                    <a href="{{ section.settings.button_link }}" target="_blank"><button class="navy forty" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</button></a>
+                  </li>
+                </ul>
+              {%- endif -%}
+             
+              <ul class="hide-md">
+               <li class="mobile-menu ani seq">
+                  <button type="button" class="hamburger" id="hamburger" aria-controls="NavDrawer">
+                    <span>
+                      <span><span></span></span>
+                      <span></span>
+                      <span><span></span></span>
+                    </span>
+                  </button>
+                </li>
+              </ul>
+
+            </nav>
+          </div>
+
         </div>
       </div>
-    </header>
-  </div>
-</div>
+  </header>
+
+  <div class="page-width">
+      <div class="row middle-xs center-xs">
+        <div class="col-xs-12 col-md-8 ani">
+          <div class="sp-60"></div>
+          <div class="sp-20 show-sm"></div>
+            {% if template.name == 'index' %}
+              <h1>{{ section.settings.hero_message }}</h1>
+                <div class="sp-60"></div>
+                <div class="show-sm">
+                  <div class="lightblue inline rounded dropshadow pad-xs-10">
+                    <h5 class="pad-xs-20 pad-left-right">{{ section.settings.hero_subline }}</h5>
+                  </div>
+                  <div class="sp-60"></div>
+                </div>
+                <div class="sp-40"></div>
+              {% else %}
+                <h1>
+                  {{ page_title }}
+                </h1>
+                <div class="sp-60"></div>
+                <div class="sp-20 show-sm"></div>
+              {% endif %}
+        </div>
+      </div>
+    </div>
+
+</section>
+
+
+{% if section.settings.logo != blank %}
+  <style>
+    .logo-image {
+      display: block;
+      max-width: {{ section.settings.logo_max_width }}px;
+    }
+  </style>
+{% endif %}
 
 {% schema %}
   {
-    "name": "Header and menus",
+    "name": "Header",
     "settings": [
       {
-        "type": "link_list",
-        "id": "main_menu_link_list",
-        "label": "Menu",
-        "default": "main-menu"
-      },
-      {
-        "type": "select",
-        "id": "main_menu_alignment",
-        "label": "Logo alignment",
-        "default": "left",
-        "options": [
-          {
-            "value": "left",
-            "label": "Left"
-          },
-          {
-            "value": "center",
-            "label": "Center"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "header_style",
-        "label": "Header style",
-        "default": "normal",
-        "options": [
-          {
-            "value": "normal",
-            "label": "Normal"
-          },
-          {
-            "value": "sticky",
-            "label": "Sticky"
-          }
-        ]
-      },
-      {
-        "type": "checkbox",
-        "id": "sticky_index",
-        "label": "Overlay header over homepage",
-        "default": false
-      },
-      {
-        "type": "checkbox",
-        "id": "sticky_collection",
-        "label": "Overlay header over collection",
-        "info": "(if collection image is enabled)",
-        "default": false
-      },
-      {
-        "type": "checkbox",
-        "id": "header_search_enable",
-        "label": "Show search icon"
-      },
-      {
         "type": "header",
-        "content": "Typography"
-      },
-      {
-        "type": "range",
-        "id": "type_navigation_size",
-        "label": "Text size",
-        "default": 18,
-        "min": 12,
-        "max": 40,
-        "unit": "px"
+        "content": "Navigation"
       },
       {
         "type": "checkbox",
-        "id": "type_navigation_style",
-        "label": "Use heading font"
+        "id": "show_shopify_logo",
+        "label": "Show Shopify logo",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_button",
+        "label": "Show button in navigation",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "text",
+        "id": "button_link",
+        "label": "Button Link"
       },
       {
         "type": "header",
@@ -213,62 +318,108 @@
       },
       {
         "type": "checkbox",
-        "id": "show_announcement",
-        "label": "Show an announcement"
+        "id": "announcement_bar_enabled",
+        "label": "Show announcement",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "announcement_bar_home_page_only",
+        "label": "Show on home page only",
+        "default": true
       },
       {
         "type": "text",
-        "id": "announcement_text",
+        "id": "announcement_bar_text",
         "label": "Announcement text",
-        "default": "Free shipping and returns",
-        "info": "When closed, the announcement will remain closed until the next visit. Change the text to see it again."
+        "default": "Announce something here"
       },
       {
         "type": "url",
-        "id": "announcement_link",
-        "label": "Announcement link"
-      }
-    ],
-    "blocks": [
+        "id": "announcement_bar_link",
+        "label": "Announcement link",
+        "info": "Optional"
+      },
       {
-        "type": "logo",
-        "name": "Logo",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "logo",
-            "label": "Logo"
-          },
-          {
-            "type": "image_picker",
-            "id": "logo-inverted",
-            "label": "White logo",
-            "info": "Used when on top of an image"
-          },
-          {
-            "type": "range",
-            "id": "desktop_logo_height",
-            "label": "Desktop logo height",
-            "default": 50,
-            "min": 20,
-            "max": 120,
-            "unit": "px"
-          },
-          {
-            "type": "range",
-            "id": "mobile_logo_height",
-            "label": "Mobile logo height",
-            "default": 40,
-            "min": 20,
-            "max": 120,
-            "unit": "px"
-          }
-        ]
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "hero_message",
+        "label": "Hero Message"
+      },
+      {
+        "type": "text",
+        "id": "hero_subline",
+        "label": "Hero Subline"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "range",
+        "id": "logo_max_width",
+        "min": 50,
+        "max": 450,
+        "step": 10,
+        "unit": "px",
+        "label": "Custom logo width",
+        "default": 250
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "mobilemenu",
+        "label": "Mobile Menu",
+        "default": "main-menu"
       }
-    ],
-    "default": {
-      "settings": {}
-    }
+    ]
   }
 {% endschema %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "{{ shop.name }}",
+  {% if section.settings.logo %}
+    {% assign image_size = section.settings.logo.width | append:'x' %}
+    "logo": "https:{{ section.settings.logo | img_url: image_size }}",
+  {% endif %}
+  "sameAs": [
+    "{{ settings.social_twitter_link }}",
+    "{{ settings.social_facebook_link }}",
+    "{{ settings.social_pinterest_link }}",
+    "{{ settings.social_instagram_link }}",
+    "{{ settings.social_tumblr_link }}",
+    "{{ settings.social_snapchat_link }}",
+    "{{ settings.social_youtube_link }}",
+    "{{ settings.social_vimeo_link }}"
+  ],
+  "url": "{{ shop.url }}{{ page.url }}"
+}
+</script>
+
+{% if template.name == 'index' %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "{{ shop.name }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ shop.url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "url": "{{ shop.url }}{{ page.url }}"
+    }
+  </script>
+{% endif %}

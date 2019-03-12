@@ -1,0 +1,26 @@
+{% section 'about-sub-nav' %}
+
+<div class="page-width relative">
+  {%- assign collection = collections[settings.teamcollection] -%}
+  {% for product in collections[settings.teamcollection].products %}
+  {% assign current_variant = product.selected_or_first_available_variant %}
+    <div class="row middle-lg">
+      <div class="col-xs-12 col-lg-1 show-lg"></div>
+      <div class="col-xs-12 col-sm-6 col-lg-5 pad-xs-0 pad-sm-40 pad-md-60 ani">
+          <img src="{{ product | img_url: '1000x' }}" />
+          <div class="sp-30 hide-sm"></div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-lg-6 pad-xs-0 pad-sm-40 pad-md-60 ani">
+          <h2 class="no-margin-bottom">{{ product.title }}</h2>
+          <div class="sp-5"></div>
+          <p class="navy-text">{{ current_variant.sku }}</p>
+          <div class="sp-5"></div>
+          <div class="sp-5 show-sm"></div>
+          {{ product.description }}
+          <div class="sp-40 hide-sm"></div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+ 
+{% section 'join-the-team' %}

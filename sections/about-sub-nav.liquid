@@ -1,0 +1,17 @@
+<div class="subnav borderbottom pad-xs-20 pad-sm-30 show-md">
+  <div class="row center-xs middle-xs">
+    <div class="col-12-xs">
+      <nav>
+        <ul class="site-nav">
+            {% for link in linklists.about.links %}  
+            <li class="{% if link.active %}current{% endif %}">
+                <a href="{{ link.url }}">
+                {{ link.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

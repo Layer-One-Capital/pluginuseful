@@ -1,0 +1,62 @@
+{% section 'about-sub-nav' %}
+
+<div class="page-width relative">
+
+<div class="row pad-xs-0 pad-sm-20">
+{% if blogs.[settings.jobsblog].articles.size > 0 %}
+{% for article in blogs.[settings.jobsblog].articles %} 
+
+  <div class="col-xs-12 rounded-xl lightgrey pad-xs-40 pad-sm-60 pad-md-0">
+    <div class="row ">
+
+        <div class="col-xs-12 col-md-8 col-lg-6 pad-xs-0 pad-sm-0 pad-md-60 ani">
+          <h3>{{ article.title }}</h3>
+          <p class="small">{{ article.content | strip_html | truncate: 200 }}</p>
+        </div>
+
+        <div class="col-xs-12 col-md-4 col-lg-6 pad-xs-0 pad-sm-0 pad-md-60 end-md ani">
+          <div class="sp-20 hide-md"></div>
+          <a href="{{ article.url }}"><button class="blue">Details</button></a>
+        </div>
+      
+    </div>
+  </div>
+  <div class="sp-40"></div>
+{% endfor %}
+
+{% else %}
+<div class="col-xs-12 rounded-xl lightgrey pad-xs-40 pad-sm-60 pad-md-0 center-xs start-md">
+    <div class="row ">
+
+        <div class="col-xs-12 col-md-6 pad-xs-0 pad-sm-0 pad-md-60 ani">
+          <h3 class="no-margin-bottom">{{ settings.nojobsheadline }}</h3>
+        </div>
+
+        <div class="col-xs-12 col-md-6 pad-xs-0 pad-sm-0 pad-md-60 end-md ani">
+          <div class="sp-40 hide-md"></div>
+          <a href="{{ settings.nojobslink }}"><button class="blue">{{ settings.nojobsbutton }}</button></a>
+        </div>
+      
+    </div>
+  </div>
+  <div class="sp-40"></div>
+{% endif %}
+</div>
+
+<div class="row pad-xs-0 pad-sm-20 pad-left-right">
+    <div class="col-xs-12 borderbottom ani fullwidth"></div>
+    <div class="sp-40 hide-sm"></div>
+    <div class="sp-20 show-sm"></div>
+    <div class="sp-20"></div>
+</div>
+
+{% section 'jobs-section-one' %}
+{% section 'jobs-section-two' %}
+{% section 'cv-button' %}
+{% section 'team-carousel' %}
+
+</div>
+ 
+{% section 'updates' %}
+
+      

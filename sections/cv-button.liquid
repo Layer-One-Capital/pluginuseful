@@ -1,0 +1,27 @@
+  <div class="row pad-xs-0 pad-sm-20 ani">
+    <div class="col-xs-12">
+    <a href="{{ section.settings.jobscvlink }}"><button class="blue fat full">{{ section.settings.jobscv }}</button></a>
+    </div>
+  </div>
+
+{% schema %}
+  {
+    "name": "CV Button",
+    "settings": [
+      {
+        "type": "text",
+        "id": "jobscv",
+        "label": "Button Text"
+      },
+      {
+        "id": "jobscvlink",
+        "type": "text",
+        "label": "Button Link"
+      }
+    ],
+    "presets": [{
+        "name": "CV Button",
+        "category": "Text"
+    }]
+  }
+{% endschema %}

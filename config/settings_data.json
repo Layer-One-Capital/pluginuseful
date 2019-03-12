@@ -1,94 +1,33 @@
 {
   "current": {
-    "color_body_bg": "#ffffff",
-    "color_body_text": "#212121",
-    "color_borders": "#f0f1f3",
-    "color_button": "#333060",
-    "color_button_text": "#fff",
-    "color_cart_dot": "#ff4f33",
-    "color_header": "#fff",
-    "color_header_text": "#212121",
-    "color_announcement": "#1c1d1d",
-    "color_announcement_text": "#fff",
-    "color_footer": "#f0f1f3",
-    "color_footer_text": "#1c1d1d",
-    "color_drawer_background": "#ffffff",
-    "color_drawer_text": "#000000",
-    "color_drawer_border": "#f0f1f3",
-    "color_drawer_button": "#333060",
-    "color_drawer_button_text": "#ffffff",
-    "color_modal_overlays": "#aeb1b8",
-    "color_image_2": "#000000",
-    "color_image_2_opacity": 0,
-    "color_image_1": "#000000",
-    "color_image_1_opacity": 26,
-    "color_small_image_bg": "#ffffff",
-    "color_large_image_bg": "#dedfe1",
-    "type_header_family": "Google 'Montserrat' 700 sans",
-    "type_header_spacing": "50",
-    "type_header_base_size": 30,
-    "type_header_line_height": 1.4,
-    "type_header_accent_transform": true,
-    "type_headers_align_text": false,
-    "type_base_family": "Google 'Open Sans' 400 sans",
-    "type_base_spacing": "25",
-    "type_base_size": 19,
-    "type_base_line_height": 1.6,
-    "type_base_accent_transform": true,
-    "icon_weight": "2px",
-    "icon_linecaps": "round",
-    "animate_page_transitions": false,
-    "animate_page_transition_style": "page-slide-reveal-down",
-    "animate_sections": false,
-    "animate_sections_background_style": "zoom-fade",
-    "animate_sections_text_style": "rise-up",
-    "animate_images": false,
-    "animate_images_style": "fade-in",
-    "animate_buttons": false,
-    "animate_underlines": false,
-    "vendor_enable": false,
-    "sku_enable": false,
-    "quantity_enable": false,
-    "variant_type": "button",
-    "inventory_enable": false,
-    "product_zoom_enable": false,
-    "quick_shop_enable": false,
-    "quick_shop_text": "Quick view",
-    "product_hover_image": false,
-    "product_color_swatches": false,
-    "collection_color_swatches": false,
-    "product_video_width": "1280",
-    "product_video_height": "720",
-    "product_video_style": "muted",
-    "product_content_1": "",
-    "product_content_2": "",
-    "product_content_3": "",
-    "product_contact": true,
-    "product_contact_title": "Ask a question",
-    "enable_product_reviews": false,
-    "cart_type": "drawer",
-    "cart_notes_enable": false,
-    "cart_terms_conditions_enable": false,
-    "cart_terms_conditions_link": "",
-    "enable_currencies": false,
-    "currency_format": "money_format",
-    "supported_currencies": "USD CAD INR GBP AUD EUR JPY",
-    "default_currency": "USD",
-    "social_facebook_link": "",
+    "color_accent": "#c4cdd5",
+    "color_body_text": "#161d25",
+    "color_main_bg": "#fff",
+    "font_heading": "helvetica_n4",
+    "font_body": "helvetica_n4",
+    "share_image": "",
+    "social_sharing_blog": true,
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
     "social_twitter_link": "",
+    "social_facebook_link": "",
     "social_pinterest_link": "",
     "social_instagram_link": "",
     "social_snapchat_link": "",
     "social_tumblr_link": "",
-    "social_linkedin_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
-    "share_facebook": true,
-    "share_twitter": true,
-    "share_pinterest": true,
-    "homepage_social_image": "",
-    "favicon": "shopify:\/\/shop_images\/blue-u-rounded.png",
-    "show_breadcrumbs": false,
+    "cart_notes_enable": true,
+    "favicon": "shopify:\/\/shop_images\/favicon_650c163b-0de9-4d49-86f6-30193ccac34b.png",
+    "mainblog": "ecommerce-blog",
+    "jobsblog": "jobs",
+    "nojobsheadline": "Currently no jobs",
+    "nojobsbutton": "Send us your CV",
+    "nojobslink": "mailto:help@pluginuseful.com",
+    "appenquiryemail": "william@pluginuseful.com",
+    "company_info": "Plug in Useful is a trade name of Pemberton Rank Ltd., a company registered in England 7341337",
+    "copyright": "©2018 Pemberton Rank Ltd.",
     "checkout_header_image": "",
     "checkout_logo_image": "",
     "checkout_logo_position": "left",
@@ -98,1795 +37,217 @@
     "checkout_input_background_color_mode": "white",
     "checkout_sidebar_background_image": "",
     "checkout_sidebar_background_color": "#fafafa",
-    "checkout_heading_font": "Helvetica Neue",
-    "checkout_body_font": "Helvetica Neue",
-    "checkout_accent_color": "#111111",
-    "checkout_button_color": "#111111",
-    "checkout_error_color": "#ff6d6d",
-    "color_image_bg": "#000000",
-    "breadcrumb": true,
-    "color_sale_tag": "#990000",
-    "color_input": "#ffffff",
-    "type_accent_family": "Google 'Poppins' 500 sans",
-    "checkout_banner_background_color": "#fff",
-    "checkout_call_to_action_color": "#a26b25",
-    "checkout_use_header_image": false,
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "homecta": "Have Any Questions?",
+    "homectatext": "Get in Touch",
+    "homectalink": "mailto:help@pluginuseful.com",
+    "appstitle": "Explore Our Apps",
+    "appscollection": "app",
+    "teamtitle": "Meet The Team",
+    "teamcollection": "team",
+    "jobstitle": "Join The Team",
+    "jobscta": "Latest Jobs",
+    "jobscv": "Send us your CV",
+    "jobscvlink": "mailto:help@pluginuseful.com",
+    "jobslink": "jobs",
+    "subscribe_text": "Sign up for our actually Useful news",
+    "jobs_subscribe_text": "Subscribe for Updates",
+    "placeholder_text": "Email Address",
+    "nojobsnbutton": "Send us your CV",
+    "jobscollection": "jobs",
+    "title": "Featured collection",
+    "collection": "app",
     "sections": {
       "header": {
         "type": "header",
-        "blocks": {
-          "1523432790873": {
-            "type": "logo",
-            "settings": {
-              "logo": "shopify:\/\/shop_images\/Screen_Shot_2018-04-30_at_13.26.08.png",
-              "logo-inverted": "",
-              "desktop_logo_height": 74,
-              "mobile_logo_height": 64
-            }
-          }
-        },
-        "block_order": [
-          "1523432790873"
-        ],
         "settings": {
-          "main_menu_link_list": "main-menu",
-          "main_menu_alignment": "left",
-          "header_style": "normal",
-          "sticky_index": false,
-          "sticky_collection": false,
-          "header_search_enable": false,
-          "type_navigation_size": 18,
-          "type_navigation_style": false,
-          "show_announcement": false,
-          "announcement_text": "Free shipping and returns",
-          "announcement_link": ""
+          "show_shopify_logo": true,
+          "show_button": true,
+          "button_text": "App Store",
+          "button_link": "https:\/\/apps.shopify.com\/partners\/pluginseo",
+          "announcement_bar_enabled": false,
+          "announcement_bar_home_page_only": false,
+          "announcement_bar_text": "🎉 Welcome to our new website",
+          "announcement_bar_link": "",
+          "hero_message": "We Make The Most Useful Apps For Shopify, Built With Care",
+          "hero_subline": "⭐ Trusted by over 120,000 stores worldwide",
+          "logo": "",
+          "logo_max_width": 250,
+          "menu": "main-menu",
+          "mobilemenu": "mobile"
         }
       },
       "footer": {
         "type": "footer",
-        "blocks": {
-          "1494292485313": {
-            "type": "menu",
-            "settings": {
-              "show_footer_title": true,
-              "menu": "footer",
-              "container_width": 50
-            }
-          },
-          "1525178459400": {
-            "type": "custom",
-            "settings": {
-              "show_footer_title": true,
-              "title": "",
-              "text": "<p>Pemberton Rank Ltd. Copyright 2018, All Rights Reserved<\/p>\n<p><\/p>\n<p>Plug in Useful is a trade name of Pemberton Rank Ltd., a company registered in England&nbsp;7341337<\/p>",
-              "container_width": 50
-            }
-          }
-        },
-        "block_order": [
-          "1494292485313",
-          "1525178459400"
-        ],
         "settings": {
-          "show_payment_icons": false
+          "show_experts": true,
+          "appscollection": "shopify-apps"
         }
       },
-      "collection-template": {
-        "type": "collection-template",
+      "1543574733305": {
+        "type": "featured-collection",
         "settings": {
-          "per_row": 4,
-          "collection_image_enable": true,
-          "collection_tags_style": "inline",
-          "collection_sort_enable": false
+          "title": "Featured collection",
+          "showtitle": false,
+          "collection": "shopify-apps"
         }
       },
-      "product-template": {
-        "type": "product-template",
+      "1543574888668": {
+        "type": "image-with-text",
         "settings": {
-          "image_size": "small",
-          "thumbnail_position": "beside",
-          "description_style": "default",
-          "social_enable": false,
-          "related_enable": false,
-          "collection_links_enable": false,
-          "related_count": 4
-        }
-      },
-      "article-template": {
-        "type": "article-template",
-        "settings": {
-          "blog_show_tags": true,
-          "blog_show_date": false,
-          "blog_show_comments": false,
-          "blog_show_author": true,
-          "social_sharing_blog": true
-        }
-      },
-      "1498163293234": {
-        "type": "featured-content",
-        "blocks": {
-          "1536970407624": {
-            "type": "text",
-            "settings": {
-              "enlarge_text": false,
-              "home_page_richtext": "<p>Email our team at help@pluginuseful.com with any comments or questions<\/p>"
-            }
-          }
-        },
-        "block_order": [
-          "1536970407624"
-        ],
-        "settings": {
-          "title": "",
-          "text": "<p>Have&nbsp;any questions? Get in touch<\/p>",
-          "align_text": "center",
-          "narrow_column": true,
-          "enlarge_text": true,
-          "divider": false
-        }
-      },
-      "1498501481980": {
-        "type": "fading-images",
-        "disabled": true,
-        "blocks": {
-          "1498501481980-0": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "focal_point": "center center",
-              "slide_title1": "Beautifully animated",
-              "slide_title2": "titles and images"
-            }
-          },
-          "1498501481980-1": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "focal_point": "center center",
-              "slide_title1": "Use this section",
-              "slide_title2": "to impress"
-            }
-          },
-          "1498501481980-2": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "focal_point": "center center",
-              "slide_title1": "And highlight",
-              "slide_title2": "important details"
-            }
-          }
-        },
-        "block_order": [
-          "1498501481980-0",
-          "1498501481980-1",
-          "1498501481980-2"
-        ],
-        "settings": {
-          "title_lines": "2",
-          "title_size": 45,
-          "slide_speed": 5,
-          "color_overlay": "#000",
-          "color_overlay_opacity": 30,
-          "section_height": 550
-        }
-      },
-      "blog-template": {
-        "type": "blog-template",
-        "settings": {
-          "blog_show_tag_filter": true,
-          "blog_show_rss": true,
-          "blog_show_tags": true,
-          "blog_show_date": false,
-          "blog_show_comments": false,
-          "blog_show_author": false
-        }
-      },
-      "1499789718857": {
-        "type": "featured-collections",
-        "disabled": true,
-        "blocks": {
-          "1499789718857-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "focal_point": "center center",
-              "size": "wide"
-            }
-          },
-          "1499789718857-1": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "focal_point": "center center",
-              "size": "square-small"
-            }
-          },
-          "1499789718857-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "focal_point": "center center",
-              "size": "square-small"
-            }
-          },
-          "1499789718857-3": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "focal_point": "center center",
-              "size": "square-small"
-            }
-          },
-          "1499789718857-4": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "focal_point": "center center",
-              "size": "square-small"
-            }
-          },
-          "1499789718857-5": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "focal_point": "center center",
-              "size": "wide"
-            }
-          }
-        },
-        "block_order": [
-          "1499789718857-0",
-          "1499789718857-1",
-          "1499789718857-2",
-          "1499789718857-3",
-          "1499789718857-4",
-          "1499789718857-5"
-        ],
-        "settings": {
-          "title": "",
-          "divider": false,
-          "enable_gutter": false
-        }
-      },
-      "1499790529450": {
-        "type": "hero-video",
-        "disabled": true,
-        "settings": {
-          "title": "USEFUL SHOPIFY APPS\nBUILT WITH CARE",
-          "title_size": 46,
-          "subheading": "Trusted by over 100,000 stores",
-          "link_text": "BROWSE APPS",
-          "link": "shopify:\/\/collections\/apps",
-          "text_align": "vertical-bottom horizontal-left",
-          "video_url": "https:\/\/dropshare-daniel.s3-eu-west-1.amazonaws.com\/VvF9H04Nnh.mp4",
-          "section_height": "650px",
-          "mobile_height": "auto"
-        }
-      },
-      "1499790633921": {
-        "type": "background-image-text",
-        "settings": {
-          "subtitle": "",
-          "title": "Useful Shopify Apps Built With Care",
-          "text": "<p>Trusted by&nbsp;over 120,000&nbsp;stores<\/p>",
-          "button_label": "BROWSE APPS",
-          "button_link": "shopify:\/\/collections\/apps",
-          "image": "shopify:\/\/shop_images\/adult-beautiful-blur-935756.jpg",
-          "alignment": "center",
-          "color_border": "#dcdcdc",
-          "layout": "left",
-          "height": 550
-        }
-      },
-      "1499790731541": {
-        "type": "collection-callout",
-        "disabled": true,
-        "settings": {
-          "collection": "",
-          "subtitle": "Built with care",
-          "title": "Useful apps for Shopify",
-          "text": "Trusted by over 100,000 shops",
-          "cta_text1": "Browse Apps",
-          "cta_link1": "shopify:\/\/collections\/apps",
-          "cta_text2": "About Us",
-          "cta_link2": "shopify:\/\/pages\/about-us",
+          "image": "shopify:\/\/shop_images\/appstore.png",
+          "invert": true,
           "layout": "right",
-          "divider": false
+          "title": "Find Us On The Shopify App Store",
+          "text": "<p>Explore our entire range of apps complete with customer reviews, ratings and pricing details.<\/p>",
+          "shopifylogo": true,
+          "appstorelink": "https:\/\/apps.shopify.com\/partners\/pluginseo",
+          "button_label": "",
+          "button_link": ""
         }
       },
-      "1499790782828": {
-        "type": "text-columns",
-        "blocks": {
-          "1499790782828-0": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": false,
-              "image": "",
-              "title": "<p style=\"font-size: 38px; font-family: Montserrat; margin-bottom: 0px;\"><span style=\"font-weight: 900; color: #333060;\">PLUG IN<\/span> <span style=\"color: #fa4700; font-weight: 500;\">SEO<\/span><\/p>",
-              "text": "<p>Check for SEO problems, get them fixed<\/p>",
-              "button_label": "MORE DETAILS",
-              "button_link": "shopify:\/\/products\/plug-in-seo"
-            }
-          },
-          "1499790782828-1": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": false,
-              "image": "",
-              "title": "<p style=\"font-size: 38px; font-family: Montserrat; margin-bottom: 0px;\"><span style=\"font-weight: 900; color: #333060;\">PLUG IN<\/span> <span style=\"color: #ffd543; font-weight: 500;\">SPEED<\/span><\/p>",
-              "text": "<p>Speed up your shop, automatically<\/p>",
-              "button_label": "MORE DETAILS",
-              "button_link": "shopify:\/\/products\/plug-in-speed"
-            }
-          },
-          "1499790782828-2": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": false,
-              "image": "",
-              "title": "<p style=\"font-size: 38px; font-family: Montserrat; margin-bottom: 0px;\"><span style=\"font-weight: 900; color: #333060;\">PLUG IN<\/span> <span style=\"color: #B985FD; font-weight: 500;\">NPS<\/span><\/p>",
-              "text": "<p>Find out how happy your customers are<\/p>",
-              "button_label": "MORE DETAILS",
-              "button_link": "shopify:\/\/products\/plug-in-nps"
-            }
-          },
-          "1525178199449": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": false,
-              "image": "",
-              "title": "<p style=\"font-size: 38px; font-family: Montserrat; margin-bottom: 0px;\"><span style=\"font-weight: 900; color: #333060;\">PLUG IN<\/span> <span style=\"color: #0086ff; font-weight: 500;\">BACKUP<\/span><\/p>",
-              "text": "<p>Back up your shop's theme<\/p>",
-              "button_label": "MORE DETAILS",
-              "button_link": "shopify:\/\/products\/plug-in-backup"
-            }
-          }
-        },
-        "block_order": [
-          "1499790782828-0",
-          "1499790782828-1",
-          "1499790782828-2",
-          "1525178199449"
-        ],
+      "our-apps": {
+        "type": "our-apps",
         "settings": {
-          "title": "",
-          "align_text": "left",
-          "divider": false
+          "show_experts": true,
+          "appscollection": "shopify-apps"
         }
       },
-      "newsletter-popup": {
-        "type": "newsletter-popup",
+      "about-sub-nav": {
+        "type": "about-sub-nav",
         "settings": {
-          "mode": "disabled",
-          "popup_seconds": 5,
-          "popup_days": 30,
-          "popup_title": "Sign up and save",
-          "popup_image": "",
-          "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
-          "close_text": "No thanks",
-          "enable_newsletter": true,
-          "button_label": "Optional button",
-          "button_link": "",
-          "enable_button": false
         }
       },
-      "product-app-template": {
-        "type": "product-app-template",
+      "team-carousel": {
+        "type": "team-carousel",
         "settings": {
-          "image_size": "small",
-          "thumbnail_position": "below",
-          "description_style": "default",
-          "social_enable": true,
-          "related_enable": true,
-          "collection_links_enable": true,
-          "related_count": 4
+          "teamtitle": "Meet The Team",
+          "teamcollection": "team",
+          "teampagelink": "meet-the-team"
         }
       },
-      "1525450726718": {
-        "type": "testimonials",
-        "blocks": {
-          "1525450726718-0": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>The team were uber helpful with my request. They were very responsive when I had questions about the process. Now my site is performing 100% better. Thanks!<\/p>",
-              "image": "",
-              "author": "Sawdust & Embers"
-            }
-          },
-          "1525450726718-1": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>The app&nbsp;is fantastic, especially if you are a novice and beginner.&nbsp;It&nbsp;is very intuitive and easy to use. The recommendations are invaluable. Highly recommend especially if you have an&nbsp;online shop.<\/p>",
-              "image": "",
-              "author": "Theory of Many"
-            }
-          },
-          "1525450726718-2": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>Wish I had found this earlier! Get this app. It's really worth it and much needed.&nbsp;<br>Would definitely recommend!<\/p>",
-              "image": "",
-              "author": "The Cuteness Shop"
-            }
-          },
-          "1525451038309": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>I had such a great experience with this. Quick, professional, and exactly as required. Highly recommended. Thank you.<\/p>",
-              "image": "",
-              "author": "Temple Cycles"
-            }
-          },
-          "1525451171235": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>I'm really enjoying this app so far. You get a lot of value in their paid package and the daily introduction videos via email help a ton. I asked their customer service a question and got a prompt and helpful response within 24hrs. I'm very happy with this app!<\/p>",
-              "image": "",
-              "author": "Faith Paper Shop"
-            }
-          },
-          "1525451152404": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>Great customer service. Quick and speedy. Excited to continue to use the app. Good onboarding process.<\/p>",
-              "image": "",
-              "author": "Made in Cookware"
-            }
-          },
-          "1525451422655": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>This is a great app. It is easy to use. I had no problem setting it up. Would recommend it to anyone.<\/p>",
-              "image": "",
-              "author": "Wonderful Buy Store"
-            }
-          },
-          "1525451235932": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>Great App! This is the second store I've used their service and would highly recommend. The out of the box free features are a great starting point for any new online shop. You'll feel better about the back end of your site with their frequent checks and email updates.<\/p>",
-              "image": "",
-              "author": "Blockchain Shop"
-            }
-          },
-          "1525451468993": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>This is a very helpful tool and the support team is superb. I would definitely recommend this app to a friend.<\/p>",
-              "image": "",
-              "author": "Phone Holder Gadgets"
-            }
-          }
-        },
-        "block_order": [
-          "1525450726718-0",
-          "1525450726718-1",
-          "1525450726718-2",
-          "1525451038309",
-          "1525451171235",
-          "1525451152404",
-          "1525451422655",
-          "1525451235932",
-          "1525451468993"
-        ],
+      "join-the-team": {
+        "type": "join-the-team",
         "settings": {
-          "title": "Reviews",
-          "align_text": "left",
-          "round_images": false,
-          "divider": true
+          "jobstitle": "Join The Team",
+          "jobscta": "Latest Jobs",
+          "jobslink": "jobs"
         }
       },
-      "collection-apps-template": {
-        "type": "collection-apps-template",
+      "updates": {
+        "type": "updates",
         "settings": {
-          "per_row": 2,
-          "collection_image_enable": true,
-          "collection_tags_style": "inline",
-          "collection_sort_enable": false
         }
       },
-      "collection-about-us-template": {
-        "type": "collection-about-us-template",
+      "subscribe": {
+        "type": "subscribe",
         "settings": {
-          "per_row": 4,
-          "collection_image_enable": true,
-          "collection_tags_style": "inline",
-          "collection_sort_enable": false
+          "subscribe_text": "Sign up for our actually useful news",
+          "placeholder_text": "Email Address"
         }
       },
-      "list-collections-template": {
-        "type": "list-collections-template",
+      "cta": {
+        "type": "cta",
         "settings": {
-          "title_enable": true,
-          "display_type": "all",
-          "sort": "alphabetical",
-          "grid": "3"
+          "homecta": "Have a Question?",
+          "homectatext": "Get in touch",
+          "homectalink": "mailto:help@pluginuseful.com"
         }
       },
-      "1537456176108": {
-        "type": "text-columns",
-        "disabled": true,
-        "blocks": {
-          "1537456176108-0": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": false,
-              "image": "",
-              "title": "<p style=\"font-size: 38px; font-family: Montserrat; margin-bottom: 0px;\"><span style=\"font-weight: 900; color: #333060;\">PLUG IN<\/span> <span style=\"color: #0C0C0C; font-weight: 500;\">GIT<\/span><\/p>",
-              "text": "<p>Coming Soon: ...<\/p>",
-              "button_label": "MORE DETAILS",
-              "button_link": ""
-            }
-          }
-        },
-        "block_order": [
-          "1537456176108-0"
-        ],
+      "jobs-section-one": {
+        "type": "jobs-section-one",
         "settings": {
-          "title": "",
-          "align_text": "center",
-          "divider": true
+          "sectiononesubtitle": "Why Apply?",
+          "sectiononeheading": "We create deceptively simple apps with solid, difficult to replicate tech under the hood",
+          "sectiononetext": "<p>We built one of the first apps for Shopify. It solved the tough problem of taking a technical analysis of a shop's code and explaining it to non-technical users.<\/p>\n<p>UX and customer service is at the heart of what we do. Founded by an engineer, we also look to solve hard technical problems to build apps others can't.<\/p>\n<p>Recently we added a templating engine to Plug in SEO, allowing shop owners to use the full range of Liquid variables and filters. Other apps offer just a couple.<\/p>\n<p>Plug in Speed is the first minifier app for Shopify. We researched and developed unique technology to make this minification happen just-in-time. Other apps break key Shopify features like theme settings and require manual or scheduled runs.<\/p>\n<p>Currently in the works we have a unique solution to the problem many shop owners have with understanding who, when and what changes are made to their theme. It's based on git and again has solid tech under the hood exposed with UX that's deceptively simple.<\/p>\n<p>Working at Plug in Useful as an engineer gives you the opportunity to work on problems like this with a small and very experienced team who care about what they make.<\/p>"
         }
       },
-      "1537456386395": {
-        "type": "text-and-image",
-        "disabled": true,
+      "jobs-section-two": {
+        "type": "jobs-section-two",
         "settings": {
-          "image": "",
-          "subtitle": "Improved",
-          "title": "Image with text",
-          "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
-          "button_label": "Optional button",
-          "button_link": "",
-          "layout": "left",
-          "divider": false
+          "sectiontwosubtitle": "Our Team",
+          "sectiontwoheading": "Learn and grow by working with each of our experienced team",
+          "sectiontwotext": "<p>We've been in the Shopify ecosystem as a partner from the early days, following their growth. And we've been working in e-commerce for even longer, helping small shop owners up to consulting for FTSE-100 online retailers.<\/p>\n<p>We're experienced software developed, project managers, UX designer, customer service agents and QA testers but we're always ready and open to learn more.<\/p>\n<p>In a small, stable and growing company like ours you have a unique opportunity to learn from a broad range of people and develop your career as we grow the team.<\/p>\n<p>Our CEO openly shares all key metrics with the company regularly, with a Monday digest covering how we're doing, goals and strategy. If you like working in a data-driven environment on things that matter we look forward to hearing from you.<\/p>\n<p>Working at Plug in Useful as an engineer gives you the opportunity to work on problems like this with a small and very experienced team who care about what they make.<\/p>"
         }
       },
-      "1540818403112": {
-        "type": "text-columns",
-        "blocks": {
-          "1540818403112-0": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": false,
-              "image": "",
-              "title": "<p style=\"font-size: 38px; font-family: Montserrat; margin-bottom: 0px;\"><span style=\"font-weight: 900; color: #333060;\">PLUG IN<\/span> <span style=\"color: #000; font-weight: 500;\">GIT<\/span><\/p>",
-              "text": "<p>Two-way sync for your Shopify theme and GitHub<\/p>",
-              "button_label": "MORE DETAILS",
-              "button_link": "shopify:\/\/products\/plug-in-git"
-            }
-          },
-          "1540818751617": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": false,
-              "image": "",
-              "title": "",
-              "text": "",
-              "button_label": "",
-              "button_link": ""
-            }
-          }
-        },
-        "block_order": [
-          "1540818403112-0",
-          "1540818751617"
-        ],
+      "about-content": {
+        "type": "about-content",
         "settings": {
-          "title": "",
-          "align_text": "left",
-          "divider": false
+          "image": "shopify:\/\/shop_images\/team.png",
+          "heading": "A small team helping shop owners solve their problems with useful apps and services.",
+          "text": "<p>We like talking to customers, listening and learning. At the same time we're clear in saying what we think and sharing what we've learnt: strong opinions, weakly held.<\/p>"
+        }
+      },
+      "partner-content": {
+        "type": "partner-content",
+        "settings": {
+          "heading": "Partner Program",
+          "text": "<p>Partner with us to earn 20% of every payment from new customers you refer to our popular Shopify <a href=\"https:\/\/apps.shopify.com\/partners\/pluginseo\" title=\"https:\/\/apps.shopify.com\/partners\/pluginseo\">apps<\/a><\/p>"
+        }
+      },
+      "cv-button": {
+        "type": "cv-button",
+        "settings": {
+          "jobscv": "Send us your CV",
+          "jobscvlink": "mailto:jobs@pluginuseful.com"
         }
       }
     },
     "content_for_index": [
-      "1499790633921",
-      "1499790529450",
-      "1499790782828",
-      "1540818403112",
-      "1537456176108",
-      "1525450726718",
-      "1499790731541",
-      "1498163293234",
-      "1499789718857",
-      "1498501481980",
-      "1537456386395"
+      "1543574733305",
+      "1543574888668"
     ]
   },
   "presets": {
-    "Classic": {
-      "color_body_bg": "#ffffff",
-      "color_body_text": "#000000",
-      "color_borders": "#e8e8e1",
-      "color_button": "#111111",
-      "color_button_text": "#fff",
-      "color_drawer_background": "#ffffff",
-      "color_drawer_text": "#000000",
-      "color_drawer_border": "#e8e8e1",
-      "color_drawer_button": "#111111",
-      "color_drawer_button_text": "#ffffff",
-      "color_footer": "#111111",
-      "color_footer_text": "#fff",
-      "color_image_1": "#000000",
-      "color_image_1_opacity": 62,
-      "color_image_2": "#000000",
-      "color_image_2_opacity": 0,
-      "color_small_image_bg": "#f4f4f4",
-      "color_large_image_bg": "#111111",
-      "type_header_family": "Google 'Poppins' 700 sans",
-      "type_header_spacing": "25",
-      "type_header_base_size": 32,
-      "type_header_line_height": 1.4,
-      "type_header_accent_transform": true,
-      "type_base_family": "Google 'Poppins' 500 sans",
-      "type_base_spacing": "50",
-      "type_base_size": 15,
-      "type_base_line_height": 1.6,
-      "type_base_accent_transform": true,
-      "icon_weight": "4px",
-      "icon_linecaps": "miter",
-      "animate_page_transitions": true,
-      "animate_page_transition_style": "page-slow-fade",
-      "animate_sections": true,
-      "animate_sections_background_style": "zoom-fade",
-      "animate_sections_text_style": "rise-up",
-      "animate_images": true,
-      "animate_images_style": "zoom-fade",
-      "animate_buttons": true,
-      "animate_underlines": true,
-      "quick_shop_enable": true,
-      "quick_shop_text": "Quick view",
-      "cart_type": "drawer",
-      "currency_format": "money_format",
-      "supported_currencies": "USD CAD INR GBP AUD EUR JPY",
-      "default_currency": "USD",
-      "share_facebook": true,
-      "share_twitter": true,
-      "share_pinterest": true,
-      "checkout_header_image": "",
-      "checkout_logo_image": "",
-      "checkout_logo_position": "left",
-      "checkout_logo_size": "medium",
-      "checkout_body_background_image": "",
-      "checkout_body_background_color": "#fff",
-      "checkout_input_background_color_mode": "white",
-      "checkout_sidebar_background_image": "",
-      "checkout_sidebar_background_color": "#fafafa",
-      "checkout_heading_font": "Helvetica Neue",
-      "checkout_body_font": "Helvetica Neue",
-      "checkout_accent_color": "#111111",
-      "checkout_button_color": "#111111",
-      "checkout_error_color": "#ff6d6d",
-      "color_image_bg": "#000000",
-      "breadcrumb": true,
-      "color_sale_tag": "#990000",
-      "color_input": "#ffffff",
-      "type_accent_family": "Google 'Poppins' 500 sans",
-      "checkout_banner_background_color": "#fff",
-      "checkout_call_to_action_color": "#a26b25",
-      "checkout_use_header_image": false,
+    "Default": {
       "sections": {
-        "header": {
-          "type": "header",
-          "settings": {
-            "main_menu_link_list": "main-menu",
-            "sticky_index": true,
-            "sticky_collection": false,
-            "header_search_enable": false,
-            "show_announcement": true
-          }
-        },
-        "footer": {
-          "type": "footer",
+        "collection-list": {
+          "type": "collection-list",
           "blocks": {
-            "1494292481350": {
-              "type": "logo_social",
-              "settings": {
-                "container_width": 20
-              }
-            },
-            "1494292485313": {
-              "type": "menu",
-              "settings": {
-                "menu": "main-menu",
-                "container_width": 20
-              }
-            },
-            "1494292487693": {
-              "type": "newsletter",
-              "settings": {
-                "container_width": 33
-              }
-            },
-            "1494301487049": {
-              "type": "menu",
-              "settings": {
-                "menu": "footer",
-                "container_width": 20
-              }
-            }
-          },
-          "block_order": [
-            "1494292481350",
-            "1494301487049",
-            "1494292485313",
-            "1494292487693"
-          ],
-          "settings": {
-            "show_payment_icons": false
-          }
-        },
-        "collection-template": {
-          "type": "collection-template",
-          "settings": {
-            "per_row": 4,
-            "collection_image_enable": true,
-            "collection_tags_style": "inline",
-            "collection_sort_enable": false
-          }
-        },
-        "product-template": {
-          "type": "product-template",
-          "settings": {
-            "image_size": "medium",
-            "social_enable": true,
-            "related_enable": true
-          }
-        },
-        "article-template": {
-          "type": "article-template",
-          "settings": {
-            "blog_show_tags": true,
-            "blog_show_date": true,
-            "blog_show_comments": true,
-            "blog_show_author": false,
-            "social_sharing_blog": true
-          }
-        },
-        "1498163293234": {
-          "type": "featured-content",
-          "settings": {
-            "divider": false
-          }
-        },
-        "1498501481980": {
-          "type": "fading-images",
-          "blocks": {
-            "1498501481980-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "focal_point": "center center",
-                "slide_title1": "Beautifully animated",
-                "slide_title2": "titles and images"
-              }
-            },
-            "1498501481980-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "focal_point": "center center",
-                "slide_title1": "Use this section",
-                "slide_title2": "to impress"
-              }
-            },
-            "1498501481980-2": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "focal_point": "center center",
-                "slide_title1": "And highlight",
-                "slide_title2": "important details"
-              }
-            }
-          },
-          "block_order": [
-            "1498501481980-0",
-            "1498501481980-1",
-            "1498501481980-2"
-          ],
-          "settings": {
-            "slide_speed": 5,
-            "color_overlay": "#000",
-            "color_overlay_opacity": 30,
-            "section_height": 550
-          }
-        },
-        "blog-template": {
-          "type": "blog-template",
-          "settings": {
-            "blog_show_tag_filter": true,
-            "blog_show_rss": false,
-            "blog_show_tags": true,
-            "blog_show_date": true,
-            "blog_show_comments": true,
-            "blog_show_author": false
-          }
-        },
-        "1499789718857": {
-          "type": "featured-collections",
-          "blocks": {
-            "1499789718857-0": {
+            "collection-list-0": {
               "type": "collection",
               "settings": {
-                "collection": "",
-                "size": "wide"
               }
             },
-            "1499789718857-1": {
+            "collection-list-1": {
               "type": "collection",
               "settings": {
-                "collection": "",
-                "size": "square-small"
               }
             },
-            "1499789718857-2": {
+            "collection-list-2": {
               "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "square-small"
-              }
-            },
-            "1499789718857-3": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "square-small"
-              }
-            },
-            "1499789718857-4": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "square-small"
-              }
-            },
-            "1499789718857-5": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "wide"
-              }
-            }
-          },
-          "block_order": [
-            "1499789718857-0",
-            "1499789718857-1",
-            "1499789718857-2",
-            "1499789718857-3",
-            "1499789718857-4",
-            "1499789718857-5"
-          ],
-          "settings": {
-            "title": "",
-            "divider": false
-          }
-        },
-        "1499790529450": {
-          "type": "hero-video",
-          "settings": {
-            "title": "Bring your\nbrand to life.",
-            "title_size": 80,
-            "subheading": "Seamless hero videos",
-            "link_text": "",
-            "link": "",
-            "text_align": "vertical-bottom horizontal-left",
-            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-            "section_height": "650px"
-          }
-        },
-        "1499790633921": {
-          "type": "background-image-text",
-          "settings": {
-            "subtitle": "Impressive",
-            "title": "Large image and text",
-            "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
-            "button_label": "",
-            "button_link": "",
-            "image": "",
-            "alignment": "center",
-            "color_border": "#f4f4f4",
-            "layout": "left",
-            "height": 650
-          }
-        },
-        "1499790731541": {
-          "type": "collection-callout",
-          "settings": {
-            "collection": "",
-            "subtitle": "Brand new",
-            "title": "Collection callout",
-            "text": "Use this section to easily call attention to one of your collections. We'll show photos of the first 5 products.",
-            "cta_text1": "Shop Jackets",
-            "cta_link1": "",
-            "cta_text2": "Shop All",
-            "cta_link2": "",
-            "divider": false
-          }
-        },
-        "1499790782828": {
-          "type": "text-columns",
-          "blocks": {
-            "1499790782828-0": {
-              "type": "text_block",
-              "settings": {
-                "enable_image": true,
-                "image": "",
-                "title": "Example title",
-                "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-                "button_label": "",
-                "button_link": ""
-              }
-            },
-            "1499790782828-1": {
-              "type": "text_block",
-              "settings": {
-                "enable_image": true,
-                "image": "",
-                "title": "Example title",
-                "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-                "button_label": "",
-                "button_link": ""
-              }
-            },
-            "1499790782828-2": {
-              "type": "text_block",
-              "settings": {
-                "enable_image": true,
-                "image": "",
-                "title": "Example title",
-                "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-                "button_label": "",
-                "button_link": ""
-              }
-            }
-          },
-          "block_order": [
-            "1499790782828-0",
-            "1499790782828-1",
-            "1499790782828-2"
-          ],
-          "settings": {
-            "title": "",
-            "align_text": "left",
-            "divider": false
-          }
-        },
-        "product-sections-template": {
-          "type": "product-sections-template",
-          "blocks": {
-            "product-image-row": {
-              "type": "image-row",
-              "settings": {
-              }
-            },
-            "product-text-and-image": {
-              "type": "text-and-image",
-              "settings": {
-              }
-            },
-            "product-background-image-text": {
-              "type": "background-image-text",
-              "settings": {
-                "layout": "right"
-              }
-            },
-            "product-text-columns": {
-              "type": "text-columns",
-              "settings": {
-              }
-            },
-            "product-hero-video": {
-              "type": "hero-video",
               "settings": {
               }
             }
           },
           "block_order": [
-            "product-image-row",
-            "product-text-and-image",
-            "product-background-image-text",
-            "product-text-columns",
-            "product-hero-video"
+            "collection-list-0",
+            "collection-list-1",
+            "collection-list-2"
           ],
           "settings": {
           }
         },
-        "page-sections-template": {
-          "type": "page-sections-template",
-          "blocks": {
-            "page-fading-images": {
-              "type": "fading-images",
-              "settings": {
-              }
-            },
-            "page-rich-text": {
-              "type": "rich-text",
-              "settings": {
-                "title": "",
-                "align_text": "center",
-                "enlarge_text": true
-              }
-            },
-            "page-text-columns": {
-              "type": "text-columns",
-              "settings": {
-              }
-            },
-            "page-background-image-text": {
-              "type": "background-image-text",
-              "settings": {
-                "layout": "right"
-              }
-            },
-            "page-featured-collection": {
-              "type": "featured-collection",
-              "settings": {
-              }
-            }
-          },
-          "block_order": [
-            "page-fading-images",
-            "page-rich-text",
-            "page-text-columns",
-            "page-background-image-text",
-            "page-featured-collection"
-          ],
+        "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "featured-product": {
+          "type": "featured-product",
           "settings": {
           }
         }
       },
       "content_for_index": [
-        "1499790529450",
-        "1498163293234",
-        "1499789718857",
-        "1498501481980",
-        "1499790731541",
-        "1499790633921",
-        "1499790782828"
-      ]
-    },
-    "Elegant": {
-      "color_body_bg": "#ffffff",
-      "color_body_text": "#000000",
-      "color_borders": "#e8e8e1",
-      "color_button": "#353956",
-      "color_button_text": "#fff",
-      "color_header": "#ffffff",
-      "color_header_text": "#040404",
-      "color_footer": "#17172c",
-      "color_footer_text": "#fff",
-      "color_drawer_background": "#ffffff",
-      "color_drawer_text": "#17172c",
-      "color_drawer_border": "#e8e8e1",
-      "color_drawer_button": "#353956",
-      "color_drawer_button_text": "#ffffff",
-      "color_modal_overlays": "#17172c",
-      "color_image_2": "#17172c",
-      "color_image_2_opacity": 0,
-      "color_image_1": "#17172c",
-      "color_image_1_opacity": 32,
-      "color_small_image_bg": "#f4f4f4",
-      "color_large_image_bg": "#17172c",
-      "type_header_family": "Google 'Unna' 700 serif",
-      "type_header_spacing": "25",
-      "type_header_base_size": 45,
-      "type_header_line_height": 1.1,
-      "type_base_family": "Google 'Crimson Text' 400 sans",
-      "type_base_spacing": "0",
-      "type_base_size": 19,
-      "type_base_line_height": 1.4,
-      "icon_weight": "3px",
-      "icon_linecaps": "miter",
-      "animate_page_transitions": true,
-      "animate_page_transition_style": "page-slow-fade",
-      "animate_sections": true,
-      "animate_sections_background_style": "zoom-fade",
-      "animate_sections_text_style": "rise-up",
-      "animate_images": true,
-      "animate_images_style": "zoom-fade",
-      "animate_buttons": true,
-      "animate_underlines": true,
-      "quick_shop_enable": true,
-      "quick_shop_text": "Quick view",
-      "cart_type": "drawer",
-      "currency_format": "money_format",
-      "supported_currencies": "USD CAD INR GBP AUD EUR JPY",
-      "default_currency": "USD",
-      "share_facebook": true,
-      "share_twitter": true,
-      "share_pinterest": true,
-      "checkout_header_image": "",
-      "checkout_logo_image": "",
-      "checkout_logo_position": "left",
-      "checkout_logo_size": "medium",
-      "checkout_body_background_image": "",
-      "checkout_body_background_color": "#fff",
-      "checkout_input_background_color_mode": "white",
-      "checkout_sidebar_background_image": "",
-      "checkout_sidebar_background_color": "#fafafa",
-      "checkout_heading_font": "Helvetica Neue",
-      "checkout_body_font": "Helvetica Neue",
-      "checkout_accent_color": "#111111",
-      "checkout_button_color": "#111111",
-      "checkout_error_color": "#ff6d6d",
-      "color_image_bg": "#000000",
-      "breadcrumb": true,
-      "color_sale_tag": "#990000",
-      "color_input": "#ffffff",
-      "type_accent_family": "Google 'Poppins' 500 sans",
-      "checkout_banner_background_color": "#fff",
-      "checkout_call_to_action_color": "#a26b25",
-      "checkout_use_header_image": false,
-      "sections": {
-        "header": {
-          "type": "header",
-          "settings": {
-            "main_menu_link_list": "main-menu",
-            "sticky_index": true,
-            "sticky_collection": false,
-            "header_search_enable": false,
-            "show_announcement": true
-          }
-        },
-        "footer": {
-          "type": "footer",
-          "blocks": {
-            "1494292481350": {
-              "type": "logo_social",
-              "settings": {
-                "container_width": 20
-              }
-            },
-            "1494292485313": {
-              "type": "menu",
-              "settings": {
-                "menu": "main-menu",
-                "container_width": 20
-              }
-            },
-            "1494292487693": {
-              "type": "newsletter",
-              "settings": {
-                "container_width": 33
-              }
-            },
-            "1494301487049": {
-              "type": "menu",
-              "settings": {
-                "menu": "footer",
-                "container_width": 20
-              }
-            }
-          },
-          "block_order": [
-            "1494292481350",
-            "1494301487049",
-            "1494292485313",
-            "1494292487693"
-          ],
-          "settings": {
-            "show_payment_icons": false
-          }
-        },
-        "collection-template": {
-          "type": "collection-template",
-          "settings": {
-            "per_row": 4,
-            "collection_image_enable": true,
-            "collection_tags_style": "inline",
-            "collection_sort_enable": false
-          }
-        },
-        "product-template": {
-          "type": "product-template",
-          "settings": {
-            "image_size": "medium",
-            "social_enable": true,
-            "related_enable": true
-          }
-        },
-        "article-template": {
-          "type": "article-template",
-          "settings": {
-            "blog_show_tags": true,
-            "blog_show_date": true,
-            "blog_show_comments": true,
-            "blog_show_author": false,
-            "social_sharing_blog": true
-          }
-        },
-        "1498163293234": {
-          "type": "featured-content",
-          "settings": {
-            "divider": false
-          }
-        },
-        "1498501481980": {
-          "type": "fading-images",
-          "blocks": {
-            "1498501481980-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "focal_point": "center center",
-                "slide_title1": "Beautifully animated",
-                "slide_title2": "titles and images"
-              }
-            },
-            "1498501481980-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "focal_point": "center center",
-                "slide_title1": "Use this section",
-                "slide_title2": "to impress"
-              }
-            },
-            "1498501481980-2": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "focal_point": "center center",
-                "slide_title1": "And highlight",
-                "slide_title2": "important details"
-              }
-            }
-          },
-          "block_order": [
-            "1498501481980-0",
-            "1498501481980-1",
-            "1498501481980-2"
-          ],
-          "settings": {
-            "slide_speed": 5,
-            "color_overlay": "#000",
-            "color_overlay_opacity": 30,
-            "section_height": 550
-          }
-        },
-        "blog-template": {
-          "type": "blog-template",
-          "settings": {
-            "blog_show_tag_filter": true,
-            "blog_show_rss": false,
-            "blog_show_tags": true,
-            "blog_show_date": true,
-            "blog_show_comments": true,
-            "blog_show_author": false
-          }
-        },
-        "1499789718857": {
-          "type": "featured-collections",
-          "blocks": {
-            "1499789718857-0": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "wide"
-              }
-            },
-            "1499789718857-1": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "square-small"
-              }
-            },
-            "1499789718857-2": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "square-small"
-              }
-            },
-            "1499789718857-3": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "square-small"
-              }
-            },
-            "1499789718857-4": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "square-small"
-              }
-            },
-            "1499789718857-5": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "wide"
-              }
-            }
-          },
-          "block_order": [
-            "1499789718857-0",
-            "1499789718857-1",
-            "1499789718857-2",
-            "1499789718857-3",
-            "1499789718857-4",
-            "1499789718857-5"
-          ],
-          "settings": {
-            "title": "",
-            "divider": false
-          }
-        },
-        "1499790529450": {
-          "type": "hero-video",
-          "settings": {
-            "title": "Bring your\nbrand to life.",
-            "title_size": 80,
-            "subheading": "Seamless hero videos",
-            "link_text": "",
-            "link": "",
-            "text_align": "vertical-bottom horizontal-left",
-            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-            "section_height": "650px"
-          }
-        },
-        "1499790633921": {
-          "type": "background-image-text",
-          "settings": {
-            "subtitle": "Impressive",
-            "title": "Large image and text",
-            "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
-            "button_label": "",
-            "button_link": "",
-            "image": "",
-            "alignment": "center",
-            "color_border": "#f4f4f4",
-            "layout": "left",
-            "height": 650
-          }
-        },
-        "1499790731541": {
-          "type": "collection-callout",
-          "settings": {
-            "collection": "",
-            "subtitle": "Brand new",
-            "title": "Collection callout",
-            "text": "Use this section to easily call attention to one of your collections. We'll show photos of the first 5 products.",
-            "cta_text1": "Shop Jackets",
-            "cta_link1": "",
-            "cta_text2": "Shop All",
-            "cta_link2": "",
-            "divider": false
-          }
-        },
-        "1499790782828": {
-          "type": "text-columns",
-          "blocks": {
-            "1499790782828-0": {
-              "type": "text_block",
-              "settings": {
-                "enable_image": true,
-                "image": "",
-                "title": "Example title",
-                "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-                "button_label": "",
-                "button_link": ""
-              }
-            },
-            "1499790782828-1": {
-              "type": "text_block",
-              "settings": {
-                "enable_image": true,
-                "image": "",
-                "title": "Example title",
-                "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-                "button_label": "",
-                "button_link": ""
-              }
-            },
-            "1499790782828-2": {
-              "type": "text_block",
-              "settings": {
-                "enable_image": true,
-                "image": "",
-                "title": "Example title",
-                "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-                "button_label": "",
-                "button_link": ""
-              }
-            }
-          },
-          "block_order": [
-            "1499790782828-0",
-            "1499790782828-1",
-            "1499790782828-2"
-          ],
-          "settings": {
-            "title": "",
-            "align_text": "left",
-            "divider": false
-          }
-        }
-      },
-      "content_for_index": [
-        "1499790529450",
-        "1498163293234",
-        "1499789718857",
-        "1498501481980",
-        "1499790731541",
-        "1499790633921",
-        "1499790782828"
-      ]
-    },
-    "Minimal": {
-      "color_body_bg": "#ffffff",
-      "color_body_text": "#000000",
-      "color_borders": "#f0f1f3",
-      "color_button": "#111111",
-      "color_button_text": "#fff",
-      "color_header": "#fff",
-      "color_header_text": "#000",
-      "color_footer": "#f0f1f3",
-      "color_footer_text": "#2c2c2c",
-      "color_drawer_background": "#ffffff",
-      "color_drawer_text": "#000000",
-      "color_drawer_border": "#f0f1f3",
-      "color_drawer_button": "#111111",
-      "color_drawer_button_text": "#ffffff",
-      "color_modal_overlays": "#aeb1b8",
-      "color_image_2": "#000000",
-      "color_image_2_opacity": 0,
-      "color_image_1": "#000000",
-      "color_image_1_opacity": 26,
-      "color_small_image_bg": "#ffffff",
-      "color_large_image_bg": "#dedfe1",
-      "type_header_family": "Google 'Rubik' 500 sans",
-      "type_header_spacing": "150",
-      "type_header_base_size": 30,
-      "type_header_line_height": 1.4,
-      "type_header_accent_transform": true,
-      "type_base_family": "Google 'Source Sans Pro' 300 sans",
-      "type_base_spacing": "25",
-      "type_base_size": 19,
-      "type_base_line_height": 1.6,
-      "type_base_accent_transform": true,
-      "icon_weight": "2px",
-      "icon_linecaps": "round",
-      "animate_page_transitions": true,
-      "animate_page_transition_style": "page-slide-reveal-down",
-      "animate_sections": true,
-      "animate_sections_background_style": "zoom-fade",
-      "animate_sections_text_style": "rise-up",
-      "animate_images": true,
-      "animate_images_style": "fade-in",
-      "animate_buttons": true,
-      "animate_underlines": true,
-      "quick_shop_enable": true,
-      "quick_shop_text": "Quick view",
-      "cart_type": "drawer",
-      "currency_format": "money_format",
-      "supported_currencies": "USD CAD INR GBP AUD EUR JPY",
-      "default_currency": "USD",
-      "share_facebook": true,
-      "share_twitter": true,
-      "share_pinterest": true,
-      "checkout_header_image": "",
-      "checkout_logo_image": "",
-      "checkout_logo_position": "left",
-      "checkout_logo_size": "medium",
-      "checkout_body_background_image": "",
-      "checkout_body_background_color": "#fff",
-      "checkout_input_background_color_mode": "white",
-      "checkout_sidebar_background_image": "",
-      "checkout_sidebar_background_color": "#fafafa",
-      "checkout_heading_font": "Helvetica Neue",
-      "checkout_body_font": "Helvetica Neue",
-      "checkout_accent_color": "#111111",
-      "checkout_button_color": "#111111",
-      "checkout_error_color": "#ff6d6d",
-      "color_image_bg": "#000000",
-      "breadcrumb": true,
-      "color_sale_tag": "#990000",
-      "color_input": "#ffffff",
-      "type_accent_family": "Google 'Poppins' 500 sans",
-      "checkout_banner_background_color": "#fff",
-      "checkout_call_to_action_color": "#a26b25",
-      "checkout_use_header_image": false,
-      "sections": {
-        "header": {
-          "type": "header",
-          "settings": {
-            "main_menu_link_list": "main-menu",
-            "sticky_index": false,
-            "sticky_collection": false,
-            "header_search_enable": false,
-            "show_announcement": true
-          }
-        },
-        "footer": {
-          "type": "footer",
-          "blocks": {
-            "1494292481350": {
-              "type": "logo_social",
-              "settings": {
-                "container_width": 20
-              }
-            },
-            "1494292485313": {
-              "type": "menu",
-              "settings": {
-                "menu": "main-menu",
-                "container_width": 20
-              }
-            },
-            "1494292487693": {
-              "type": "newsletter",
-              "settings": {
-                "container_width": 33
-              }
-            },
-            "1494301487049": {
-              "type": "menu",
-              "settings": {
-                "menu": "footer",
-                "container_width": 20
-              }
-            }
-          },
-          "block_order": [
-            "1494292481350",
-            "1494301487049",
-            "1494292485313",
-            "1494292487693"
-          ],
-          "settings": {
-            "show_payment_icons": false
-          }
-        },
-        "collection-template": {
-          "type": "collection-template",
-          "settings": {
-            "per_row": 4,
-            "collection_image_enable": true,
-            "collection_tags_style": "inline",
-            "collection_sort_enable": false
-          }
-        },
-        "product-template": {
-          "type": "product-template",
-          "settings": {
-            "image_size": "medium",
-            "social_enable": true,
-            "related_enable": true
-          }
-        },
-        "article-template": {
-          "type": "article-template",
-          "settings": {
-            "blog_show_tags": true,
-            "blog_show_date": true,
-            "blog_show_comments": true,
-            "blog_show_author": false,
-            "social_sharing_blog": true
-          }
-        },
-        "1498163293234": {
-          "type": "featured-content",
-          "settings": {
-            "divider": false
-          }
-        },
-        "1498501481980": {
-          "type": "fading-images",
-          "blocks": {
-            "1498501481980-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "focal_point": "center center",
-                "slide_title1": "Beautifully animated",
-                "slide_title2": "titles and images"
-              }
-            },
-            "1498501481980-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "focal_point": "center center",
-                "slide_title1": "Use this section",
-                "slide_title2": "to impress"
-              }
-            },
-            "1498501481980-2": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "focal_point": "center center",
-                "slide_title1": "And highlight",
-                "slide_title2": "important details"
-              }
-            }
-          },
-          "block_order": [
-            "1498501481980-0",
-            "1498501481980-1",
-            "1498501481980-2"
-          ],
-          "settings": {
-            "slide_speed": 5,
-            "color_overlay": "#000",
-            "color_overlay_opacity": 30,
-            "section_height": 550
-          }
-        },
-        "blog-template": {
-          "type": "blog-template",
-          "settings": {
-            "blog_show_tag_filter": true,
-            "blog_show_rss": false,
-            "blog_show_tags": true,
-            "blog_show_date": true,
-            "blog_show_comments": true,
-            "blog_show_author": false
-          }
-        },
-        "1499789718857": {
-          "type": "featured-collections",
-          "blocks": {
-            "1499789718857-0": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "wide"
-              }
-            },
-            "1499789718857-1": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "square-small"
-              }
-            },
-            "1499789718857-2": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "square-small"
-              }
-            },
-            "1499789718857-3": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "square-small"
-              }
-            },
-            "1499789718857-4": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "square-small"
-              }
-            },
-            "1499789718857-5": {
-              "type": "collection",
-              "settings": {
-                "collection": "",
-                "size": "wide"
-              }
-            }
-          },
-          "block_order": [
-            "1499789718857-0",
-            "1499789718857-1",
-            "1499789718857-2",
-            "1499789718857-3",
-            "1499789718857-4",
-            "1499789718857-5"
-          ],
-          "settings": {
-            "title": "",
-            "divider": false
-          }
-        },
-        "1499790529450": {
-          "type": "hero-video",
-          "settings": {
-            "title": "Bring your\nbrand to life.",
-            "title_size": 80,
-            "subheading": "Seamless hero videos",
-            "link_text": "",
-            "link": "",
-            "text_align": "vertical-bottom horizontal-left",
-            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-            "section_height": "650px"
-          }
-        },
-        "1499790633921": {
-          "type": "background-image-text",
-          "settings": {
-            "subtitle": "Impressive",
-            "title": "Large image and text",
-            "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
-            "button_label": "",
-            "button_link": "",
-            "image": "",
-            "alignment": "center",
-            "color_border": "#f4f4f4",
-            "layout": "left",
-            "height": 650
-          }
-        },
-        "1499790731541": {
-          "type": "collection-callout",
-          "settings": {
-            "collection": "",
-            "subtitle": "Brand new",
-            "title": "Collection callout",
-            "text": "Use this section to easily call attention to one of your collections. We'll show photos of the first 5 products.",
-            "cta_text1": "Shop Jackets",
-            "cta_link1": "",
-            "cta_text2": "Shop All",
-            "cta_link2": "",
-            "divider": false
-          }
-        },
-        "1499790782828": {
-          "type": "text-columns",
-          "blocks": {
-            "1499790782828-0": {
-              "type": "text_block",
-              "settings": {
-                "enable_image": true,
-                "image": "",
-                "title": "Example title",
-                "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-                "button_label": "",
-                "button_link": ""
-              }
-            },
-            "1499790782828-1": {
-              "type": "text_block",
-              "settings": {
-                "enable_image": true,
-                "image": "",
-                "title": "Example title",
-                "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-                "button_label": "",
-                "button_link": ""
-              }
-            },
-            "1499790782828-2": {
-              "type": "text_block",
-              "settings": {
-                "enable_image": true,
-                "image": "",
-                "title": "Example title",
-                "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-                "button_label": "",
-                "button_link": ""
-              }
-            }
-          },
-          "block_order": [
-            "1499790782828-0",
-            "1499790782828-1",
-            "1499790782828-2"
-          ],
-          "settings": {
-            "title": "",
-            "align_text": "left",
-            "divider": false
-          }
-        }
-      },
-      "content_for_index": [
-        "1499790529450",
-        "1498163293234",
-        "1499789718857",
-        "1498501481980",
-        "1499790731541",
-        "1499790633921",
-        "1499790782828"
+        "collection-list",
+        "featured-collection",
+        "featured-product"
       ]
     }
   }

@@ -1,142 +1,151 @@
-{%- assign product = all_products[section.settings.featured_product] -%}
+{%- assign product = all_products[section.settings.product] -%}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
-{% if section.settings.divider %}<div class="section--divider">{% endif %}
+{% if product == empty %}
+  {%- assign section_onboarding = true -%}
+  {%- assign onboarding_title = 'homepage.onboarding.product_title' | t -%}
+{% endif %}
 
-<div id="ProductSection-{{ section.id }}"
-  itemscope itemtype="http://schema.org/Product"
-  data-section-id="{{ section.id }}"
-  data-section-type="product"
-  {% if settings.product_zoom_enable %}
-    data-image-zoom="true"
-  {% endif %}>
+<div data-section-id="{{ section.id }}" data-section-type="product">
 
-  {% include 'product-template-variables' %}
 
-  <div class="page-width">
-    <div class="grid">
-      <div class="grid__item medium-up--one-half">
-        {% include 'product-images', section_id: section.id, thumbnail_position: section.settings.thumbnail_position %}
-      </div>
 
-      <div class="grid__item medium-up--one-half">
-        <div class="product-single__meta">
-          {% unless product.empty? %}
-            {%- assign compare_at_price = current_variant.compare_at_price -%}
-            {%- assign price = current_variant.price -%}
-            {%- assign product_available = current_variant.available -%}
-          {% else %}
-            {%- assign compare_at_price = 1999 -%}
-            {%- assign price = 1999 -%}
-            {%- assign product_available = true -%}
-          {% endunless %}
+  {% for image in product.images %}
+    {% capture wrapper_class %}
+      {%- unless featured_image == image -%}
+        hide
+      {%- endunless -%}
+    {% endcapture %}
 
-          {% if settings.vendor_enable %}
-            <div class="product-single__vendor" itemprop="brand">{{ product.vendor }}</div>
-          {% endif %}
+    {% include 'responsive-image' with
+      image: image,
+      max_width: 700,
+      max_height: 800,
+      image_attributes: "data-product-featured-image",
+      wrapper_class: wrapper_class,
+      wrapper_attributes: "data-product-image-wrapper",
+    %}
+  {% endfor %}
 
-          <h1 class="product-single__title" itemprop="name">
-            {% unless product.empty? %}
-              {{ product.title }}
-            {% else %}
-              {{ 'home_page.onboarding.product_title' | t }}
-            {% endunless %}
-          </h1>
+  {% if product.images.size > 1 %}
+    <ul>
+      {% for image in product.images %}
+        <li>
+          <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail>
+            <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
-          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-            {% if product.compare_at_price_max > product.price %}
-              <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-              <span class="product__price-wrap-{{ section.id }}">
-                <span id="ComparePrice-{{ section.id }}" class="product__price product__price--compare">
-                  {% if compare_at_price > price %}
-                    {{ compare_at_price | money }}
-                  {% endif %}
-                </span>
-              </span>
-              <span id="ComparePriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
-            {% else %}
-              <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-            {% endif %}
+  <h1>{{ product.title | default: onboarding_title }}</h1>
+  {% if product.vendor != blank %}
+    <p>{{ product.vendor }}</p>
+  {% endif %}
 
-            <span id="ProductPrice-{{ section.id }}"
-              class="product__price{% if compare_at_price > price %} on-sale{% endif %}"
-              itemprop="price"
-              content="{{ price | divided_by: 100.00 }}">
-              {{ price | money }}
-            </span>
+  <div>
 
-            <hr class="hr--medium">
+    <form action="/cart/add" method="post" enctype="multipart/form-data">
+      {% unless product.has_only_default_variant %}
+        {% for option in product.options_with_values %}
+          <div class="selector-wrapper js">
+            <label for="SingleOptionSelector-{{ section.id }}-{{ forloop.index0 }}">
+              {{ option.name }}
+            </label>
 
-            <meta itemprop="priceCurrency" content="{{ shop.currency }}">
-            <link itemprop="availability" href="http://schema.org/{% if product_available %}InStock{% else %}OutOfStock{% endif %}">
-
-            {% include 'product-form', section_id: section.id %}
-
-            <div class="product-single__description rte" itemprop="description">
-              {% if section.settings.show_description %}
-                {% unless product.empty? %}
-                  {{ product.description }}
-                {% else %}
-                  {{ 'home_page.onboarding.product_description' | t }}
-                {% endunless %}
-              {% else %}
-                <p><a href="{{ product.url }}">{{ 'general.accessibility.learn_more' | t }}</a></p>
-              {% endif %}
-            </div>
-
-            {% include 'product-additional-content', section_id: section.id %}
+            <select
+              id="SingleOptionSelector-{{ section.id }}-{{ forloop.index0 }}"
+              data-single-option-selector
+              data-index="option{{ option.position }}">
+              {% for value in option.values %}
+                <option
+                  value="{{ value | escape }}"
+                  {% if option.selected_value == value %}selected="selected"{% endif %}>
+                    {{ value }}
+                </option>
+              {% endfor %}
+            </select>
           </div>
-        </div>
+        {% endfor %}
+      {% endunless %}
+
+      <select name="id" class="no-js" data-product-select>
+        {% for variant in product.variants %}
+          <option
+            {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+            {% unless variant.available %}disabled="disabled"{% endunless %}
+            value="{{ variant.id }}">
+              {{ variant.title }}
+          </option>
+        {% endfor %}
+      </select>
+
+      <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+      <input type="number" id="Quantity-{{ section.id }}" name="quantity" value="1" min="1">
+
+      <div data-price-wrapper>
+        <span data-product-price>
+          {{ current_variant.price | default: '1999' | money }}
+        </span>
+
+        {% if product.compare_at_price_max > product.price %}
+          <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+          <s data-compare-price>
+            {% if current_variant.compare_at_price > current_variant.price %}
+              {{ current_variant.compare_at_price | money }}
+            {% endif %}
+          </s>
+        {% endif %}
       </div>
-    </div>
+
+      <button
+        type="submit"
+        name="add"
+        data-add-to-cart
+        {% unless product.available %}disabled="disabled"{% endunless %}
+        {% if section_onboarding %}disabled="disabled"{% endif %}>
+          <span data-add-to-cart-text>
+            {% if product.available %}
+              {{ 'products.product.add_to_cart' | t }}
+            {% else %}
+              {{ 'products.product.sold_out' | t }}
+            {% endif %}
+          </span>
+      </button>
+    </form>
+
   </div>
 
+  <div class="rte">
+    {{ product.description }}
+  </div>
+
+  {% if section.settings.show_share_buttons %}
+    {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+  {% endif %}
+
+  {% unless product == empty %}
+    <script type="application/json" data-product-json>
+      {{ product | json }}
+    </script>
+  {% endunless %}
 </div>
-
-{% unless product.empty? %}
-  <script type="application/json" id="ProductJson-{{ section.id }}">
-    {{ product | json }}
-  </script>
-{% endunless %}
-
-{% if section.settings.divider %}</div>{% endif %}
 
 {% schema %}
   {
     "name": "Featured product",
-    "class": "index-section",
     "settings": [
       {
         "type": "product",
-        "id": "featured_product",
+        "id": "product",
         "label": "Product"
       },
       {
-        "type": "select",
-        "id": "thumbnail_position",
-        "label": "Thumbnail position",
-        "default": "beside",
-        "options": [
-          {
-            "value": "beside",
-            "label": "Next to image"
-          },
-          {
-            "value": "below",
-            "label": "Below image"
-          }
-        ]
-      },
-      {
         "type": "checkbox",
-        "id": "show_description",
-        "label": "Show description",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "divider",
-        "label": "Show section divider",
-        "default": false
+        "id": "show_share_buttons",
+        "label": "Show social sharing buttons"
       }
     ],
     "presets": [
@@ -147,3 +156,63 @@
     ]
   }
 {% endschema %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.title | escape }}",
+  "url": "{{ shop.url }}{{ product.url }}",
+  {% if product.featured_image %}
+    {% assign image_size = product.featured_image.width | append: 'x' %}
+    "image": [
+      "https:{{ product.featured_image.src | img_url: image_size }}"
+    ],
+  {% endif %}
+  "description": "{{ product.description | strip_html | escape }}",
+  {% if current_variant.sku != blank %}
+    "sku": "{{ current_variant.sku }}",
+  {% endif %}
+  "brand": {
+    "@type": "Thing",
+    "name": "{{ product.vendor | escape }}"
+  },
+  {% if product.variants %}
+    "offers": [
+      {% for variant in product.variants %}
+        {
+          "@type" : "Offer",
+          "availability" : "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+          "price" : "{{ variant.price | divided_by: 100.00 }}",
+          "priceCurrency" : "{{ shop.currency }}",
+          "url" : "{{ shop.url }}{{ variant.url }}",
+          "itemOffered" :
+          {
+              "@type" : "Product",
+              {% if variant.image %}
+                {% assign variant_image_size = variant.image.width | append: 'x' %}
+                "image": "http:{{ variant.image.src | img_url: variant_image_size }}",
+              {% endif %}
+              {% if variant.title != blank %}
+                "name" : "{{ variant.title | escape }}",
+              {% endif %}
+              {% if variant.sku != blank %}
+                "sku": "{{ variant.sku }}",
+              {% endif %}
+              {% if variant.weight != blank %}
+                "weight": {
+                  "@type": "QuantitativeValue",
+                  {% if variant.weight_unit != blank %}
+                    "unitCode": "{{ variant.weight_unit }}",
+                  {% endif %}
+                  "value": "{{ variant.weight | weight_with_unit: variant.weight_unit }}"
+                },
+              {% endif %}
+              "url": "{{ shop.url }}{{ variant.url }}"
+          }
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  {% endif %}
+}
+</script>

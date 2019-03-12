@@ -1,0 +1,22 @@
+<div class="offwhite bordertop">
+  <div class="page-width relative">
+    <div class="row center-xs pad-xs-60 pad-sm-80 pad-top-bottom">
+      <div class="col-xs-12">
+          <h3>{{ settings.jobs_subscribe_text }}</h3>
+      </div>
+      <div class="sp-20"></div>
+      <div class="col-xs-12 col-sm-8 col-md-5 col-lg-5">
+        {% form 'customer' %}
+        <div class="row">
+          <div class="col-xs-12 relative">
+            <input id="contact_tags" name="contact[tags]" type="hidden" value="prospect,newsletter" />
+            <input id="contact_email" name="contact[email]" type="text" placeholder="{{ settings.placeholder_text }}"/>
+            <input class="submit" type="submit" />
+          </div>
+        </div>
+        {% endform %}
+      </div>
+      <div class="sp-10"></div>
+    </div>
+  </div>
+</div>

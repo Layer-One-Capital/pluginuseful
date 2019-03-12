@@ -1,0 +1,122 @@
+
+{% if section.settings.invert %}
+<div class="blue white-text appstore relative overflow">
+  <div class="appshapeholderone">
+    <div class="white-gradient appshape one"></div>
+  </div>
+  <div class="appshapeholdertwo">
+    <div class="navy-gradient appshape two"></div>
+  </div>
+{% else %}
+<div>
+{% endif %}
+
+  <div class="page-width">
+    <div class="sp-40"></div>
+    <div class="sp-40 show-md"></div>
+    <div class="row pad-xs-10 pad-sm-40 between-xs">
+
+      <div class="col-xs-12 col-md-6 ani show-md {% if section.settings.layout == 'right' %} last-md {% endif %}">
+          {% if section.settings.image != blank %}
+            <img src="{{ section.settings.image | img_url: '1500x' }}" />
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+          <div class="sp-30 hide-md"></div>
+          <div class="sp-20 show-sm"></div>
+      </div>
+
+      <div class="col-xs-12 col-md-5 pad-xs-0 pad-md-40 pad-left-right ani {% if section.settings.layout == 'right' %} first-md {% endif %}">
+          <h2>{{ section.settings.title | escape }}</h2>
+          <p>{{ section.settings.text }}</p>
+          
+          {% if section.settings.shopifylogo %}
+          <div class="sp-20"></div>
+              <a target="_blank" href="{{ section.settings.appstorelink }}"><img class="shopifyappstore" src="{{ 'shopify-appstore.svg' | asset_url }}" /></a>
+          {% else %}
+            {% if section.settings.button_label != blank and section.settings.button_link != blank %}  
+                <div class="sp-20"></div>
+                <a href="{{ section.settings.button_link }}"><button class="navy fat" >{{ section.settings.button_label | escape }}</button></a>
+                
+            {% endif %}
+          {% endif %}
+      </div>
+
+    </div>
+    <div class="sp-40"></div>
+    <div class="sp-40 show-md"></div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Image with text",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "invert",
+        "label": "Invert Colours",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      },
+      {
+        "type": "checkbox",
+        "id": "shopifylogo",
+        "label": "Show Shopify Logo"
+      },
+      {
+        "type": "text",
+        "id": "appstorelink",
+        "label": "App Store Link"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with text",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

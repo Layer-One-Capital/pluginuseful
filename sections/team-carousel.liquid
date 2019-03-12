@@ -1,0 +1,58 @@
+  <div class="row pad-xs-0 pad-sm-20">
+    <div class="sp-15"></div>
+    <div class="sp-40 hide-sm"></div>
+    <div class="col-xs-12 borderbottom ani"></div>
+    <div class="sp-20 "></div>
+  </div>
+  
+  <div class="row center-xs pad-xs-40 pad-top-bottom ani seq">
+    <div class="col-xs-12 relative">
+        <h2>{{ section.settings.teamtitle }}</h2>
+        <a href="{{ section.settings.teampagelink }}" class="arrow-right show-sm"></a>
+        <div class="sp-20"></div>
+    </div>
+    <div class="col-xs-12">
+      <div class="">
+        <div class="main-carousel center-xs" id="team">
+          {%- assign collection = collections[settings.teamcollection] -%}
+          {% for product in collections[settings.teamcollection].products limit: 10 %}
+            <div class="carousel-cell col-xs-12 col-sm-5 col-md-3 pad-xs-0 pad-sm-20 ani seq">
+              <img src="{{ product | img_url: '520x' }}" />
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 hide-sm">
+      <div class="sp-40"></div>
+      <a href="{{ section.settings.teampagelink }}" ><button class="blue fat full">{{ section.settings.teamtitle }}</button></a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Team Carousel",
+    "settings": [
+	    {
+        "type": "text",
+        "id": "teamtitle",
+        "label": "Team title"
+      },
+      {
+        "type": "collection",
+        "id": "teamcollection",
+        "label": "Team Collection"
+     },
+      {
+        "type": "page",
+        "id": "teampagelink",
+        "label": "Team Page"
+     }
+    ],
+    "presets": [{
+        "name": "Team Carousel",
+        "category": "Text"
+    }]
+  }
+{% endschema %}

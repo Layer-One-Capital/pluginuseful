@@ -1,0 +1,447 @@
+{%- assign colour           = product.metafields["global"]["Colour"] -%}
+{%- assign appstore         = product.metafields["global"]["Appstore Link"] -%}
+{%- assign features         = product.metafields["global"]["Features"] | newline_to_br | split:'<br />' -%}
+{%- assign benefit-one      = product.metafields["global"]["Key Benefit 1"] | newline_to_br | split:'<br />' -%}
+{%- assign benefit-two      = product.metafields["global"]["Key Benefit 2"] | newline_to_br | split:'<br />' -%}
+{%- assign benefit-three    = product.metafields["global"]["Key Benefit 3"] | newline_to_br | split:'<br />' -%}
+{%- assign pricing-one      = product.metafields["global"]["Pricing 1"] | newline_to_br | split:'<br />' -%}
+{%- assign pricing-two      = product.metafields["global"]["Pricing 2"] | newline_to_br | split:'<br />' -%}
+{%- assign pricing-three    = product.metafields["global"]["Pricing 3"] | newline_to_br | split:'<br />' -%}
+{%- assign testimonial      = product.metafields["global"]["Testimonial"] | newline_to_br | split:'<br />' -%}
+{%- assign short_ttl        = product.title | split: ' ' -%}
+
+<div class="borderbottom pad-xs-20 pad-top-bottom">
+  <div class="page-width">
+    <div class="row start-xs between-xs pad-xs-0 pad-sm-20 pad-left-right">
+      <div class="col-sm-6">
+        <div class="montserrat appcontainer productappicon">
+          <span class="rounded app-icon" style="background:#333060;background: {{ colour }}"><img src="{{ 'app-icon.svg' | asset_url }}" /></span><span class="app-title">{{ short_ttl[0] }}&nbsp;{{ short_ttl[1] }}<span style="color:#333060;color: {{ colour }}">&nbsp;{{ short_ttl[2] }}&nbsp;{{ short_ttl[3] }}&nbsp;{{ short_ttl[4] }}&nbsp;{{ short_ttl[5] }}</span></span>
+        </div>
+      </div>
+      <div class="col-sm-6 end-xs end-sm">
+        <a href="{{ appstore }}" target="_blank" class="js-no-transition"><button class="blue sixty">Install Now</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-width relative">
+    
+    <div class="row">
+      <div class="show-md col-xs-12 col-lg-4 pad-xs-0 pad-sm-20 ani seq">
+        <h3>Overview</h3>
+        <div class="sp-20 hide-sm"></div>
+      </div>
+      <div class="col-xs-12 col-lg-8 pad-xs-0 pad-sm-20 ani seq">
+        {{ product.description }}
+      </div>
+    </div>
+
+    <div class="row ani seq pad-xs-0 pad-sm-20">
+      <div class="sp-10"></div>
+      <div class="col-xs-12 borderbottom  ani seq"></div>
+      <div class="sp-30"></div>
+      <div class="sp-20 hide-sm"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-lg-4 pad-sm-20 ani seq">
+        <div class="rounded ani seq" style="background: #eee url({{ product.images[0] | img_url: '1500x' }}) no-repeat center center;background-size:cover;">
+          <img src="{{ '4-3.png' | asset_url }}" />
+        </div>
+        <div class="sp-40"></div>
+        <h4 class="ani seq">{{ benefit-one[0] }}</h4>
+        <p class="small ani seq">{{ benefit-one[1] }}</p>
+        <div class="sp-40 hide-lg"></div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-lg-4 pad-sm-20 ani seq">
+        <div class="rounded ani seq" style="background: #eee url({{ product.images[1] | img_url: '1500x' }}) no-repeat center center;background-size:cover;">
+          <img src="{{ '4-3.png' | asset_url }}" />
+        </div>
+        <div class="sp-40"></div>
+        <h4 class="ani seq">{{ benefit-two[0] }}</h4>
+        <p class="small ani seq">{{ benefit-two[1] }}</p>
+        <div class="sp-40 hide-lg"></div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-lg-4 pad-sm-20 ani seq">
+        <div class="rounded ani seq" style="background: #eee url('{{ product.images[2] | img_url: '1500x' }}') no-repeat center center;background-size:cover;">
+          <img src="{{ '4-3.png' | asset_url }}" />
+        </div>
+        <div class="sp-40"></div>
+        <h4 class="ani seq">{{ benefit-three[0] }}</h4>
+        <p class="small ani seq">{{ benefit-three[1] }}</p>
+        <div class="sp-30 show-sm"></div>
+      </div>
+    </div>
+</div>
+
+<div class="navy">
+  <div class="page-width relative">
+    <div class="sp-40"></div>
+    <div class="sp-20 show-md"></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="main-carousel gallery" id="productcarousel">
+            {% for image in product.images offset:3 %}
+              <div class="gallery-cell carousel-cell pad-xs-10" src="{{ image.src | product_img_url: '3000x' }}">
+                <div style="position:relative;display:block;background: #261e68 url({{ image.src | product_img_url: '3000x' }}) no-repeat center center;background-size:cover;border-radius:6px;">
+                  <img src="{{ image.src | product_img_url: '3000x' }}"" />
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="main-carousel carousel-nav show-md" >
+            {% for image in product.images offset:3 %}
+              <div class="carousel-cell col-xs-3 pad-xs-10">
+                <div style="background: #261e68 url('{{ image.src | product_img_url: '520x' }}') no-repeat center center;background-size:cover;border-radius:4px;">
+                  <img src="{{ 'slide-ratio.png' | asset_url }}" alt="" />
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sp-60"></div>
+    <div class="sp-20 hide-md"></div>
+  </div>
+</div>
+
+{% if features !=blank %}
+<div class="page-width relative">
+    <div class="row">
+      <div class="sp-20 show-sm"></div>
+      <div class="col-xs-12 col-md-5 pad-xs-0 pad-sm-20 ani">
+        <h3 class="no-margin-bottom">Powerful Features</h3>
+        <div class="sp-10"></div>
+        <p class="small">* Paid Edition</p>
+        <div class="sp-20 hide-sm"></div>
+      </div>
+      <div class="col-xs-12 col-md-7 pad-xs-0 pad-sm-20 ani">
+        <div class="sp-10"></div>
+        <ul>
+           {% for feature in features %}
+           <li>{{ feature }}</li>
+           {% endfor %}
+        </ul>
+      </div>
+    </div>
+</div>
+{% endif %}
+
+{% if testimonial !=blank %}
+<div class="navy">
+  <div class="page-width relative">
+  <div class="sp-40"></div>
+  <div class="sp-30"></div>
+    <div class="row middle-xs center-xs white-text ani center-xs">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-7">
+            <img class="stars" src="{{ 'stars.svg' | asset_url }}" />
+        </div>
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-7">
+            <div class="sp-30"></div>
+            <div class="sp-10 show-md"></div>
+            <p>{{ testimonial[0] }}</p>
+            <div class="sp-20"></div>
+            <div class="sp-10 show-md"></div>
+            <p class="medium">{{ testimonial[1] }}</p>
+            <div class="sp-10 show-md"></div>
+        </div>
+    </div>
+    <div class="sp-30"></div>
+    <div class="sp-40"></div>
+  </div>
+</div>
+{% endif %}
+
+<div class="page-width relative">
+    {% if pricing-one !=blank %}
+    <div class="row">
+      <div class="sp-20 show-sm"></div>
+      <div class="col-xs-12 col-md-5 col-lg-4 pad-xs-0 pad-sm-20 between-xs flex column-md ani">
+        <div>
+          <h3 class="no-margin-bottom">{{ pricing-one[0] }}</h3>
+          <div class="sp-10"></div>
+          <p class="small blue-text">{{ pricing-one[1] }}</p>
+          <div class="sp-20"></div>
+        </div>
+        <div>
+          {% if pricing-one[1] contains 'POA' %}
+            <a href="mailto:{{ settings.appenquiryemail }}" class="js-no-transition"><button class="blue sixty">Enquire Now</button></a>
+          {% else %}
+            <a href="{{ appstore }}" class="js-no-transition"><button class="blue sixty">Install Now</button></a>
+          {% endif %}
+          <div class="sp-20"></div>
+          <div class="sp-20 hide-sm"></div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-7 col-lg-8 pad-xs-0 pad-sm-20 ani">
+        <h4>{{ pricing-one[2] }}</h4>
+          {% if pricing-one[3] %}<p class="small">{{ pricing-one[3] }}</p>{% endif %}
+          {% if pricing-one[4] %}<p class="small">{{ pricing-one[4] }}</p>{% endif %}
+          {% if pricing-one[5] %}<p class="small">{{ pricing-one[5] }}</p>{% endif %}
+          {% if pricing-one[6] %}<p class="small">{{ pricing-one[6] }}</p>{% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if pricing-two !=blank %}
+    <div class="row ani seq pad-xs-0 pad-sm-20">
+      <div class="sp-20"></div>
+      <div class="sp-10 hide-sm"></div>
+      <div class="col-xs-12 borderbottom ani"></div>
+      <div class="sp-20"></div>
+      <div class="sp-20 hide-sm"></div>
+    </div>
+    {% endif %}
+
+    {% if pricing-two !=blank %}
+    <div class="row">
+      <div class="sp-20 show-sm"></div>
+      <div class="col-xs-12 col-md-5 col-lg-4 pad-xs-0 pad-sm-20 between-xs flex column-md ani">
+        <div>
+          <h3 class="no-margin-bottom">{{ pricing-two[0] }}</h3>
+          <div class="sp-10"></div>
+          <p class="small blue-text">{{ pricing-two[1] }}</p>
+          <div class="sp-20"></div>
+        </div>
+        <div>
+          {% if pricing-two[1] contains 'POA' %}
+            <a href="mailto:{{ settings.appenquiryemail }}" class="js-no-transition"><button class="blue sixty">Enquire Now</button></a>
+          {% else %}
+            <a href="{{ appstore }}" class="js-no-transition"><button class="blue sixty">Install Now</button></a>
+          {% endif %}
+          <div class="sp-20"></div>
+          <div class="sp-20 hide-sm"></div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-7 col-lg-8 pad-xs-0 pad-sm-20 ani">
+        <h4>{{ pricing-two[2] }}</h4>
+          {% if pricing-two[3] %}<p class="small">{{ pricing-two[3] }}</p>{% endif %}
+          {% if pricing-two[4] %}<p class="small">{{ pricing-two[4] }}</p>{% endif %}
+          {% if pricing-two[5] %}<p class="small">{{ pricing-two[5] }}</p>{% endif %}
+          {% if pricing-two[6] %}<p class="small">{{ pricing-two[6] }}</p>{% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if pricing-three !=blank %}
+    <div class="row ani seq pad-xs-0 pad-sm-20">
+      <div class="sp-20"></div>
+      <div class="sp-10 hide-sm"></div>
+      <div class="col-xs-12 borderbottom ani"></div>
+      <div class="sp-20"></div>
+      <div class="sp-20 hide-sm"></div>
+    </div>
+    {% endif %}
+
+    {% if pricing-three !=blank %}
+    <div class="row">
+      <div class="sp-20 show-sm"></div>
+      <div class="col-xs-12 col-md-5 col-lg-4 pad-xs-0 pad-sm-20 between-xs flex column-md ani">
+        <div>
+          <h3 class="no-margin-bottom">{{ pricing-three[0] }}</h3>
+          <div class="sp-10"></div>
+          <p class="small blue-text">{{ pricing-three[1] }}</p>
+          <div class="sp-20"></div>
+        </div>
+        <div>
+          {% if pricing-three[1] contains 'POA' %}
+            <a href="mailto:{{ settings.appenquiryemail }}" class="js-no-transition"><button class="blue sixty">Enquire Now</button></a>
+          {% else %}
+            <a href="{{ appstore }}" class="js-no-transition"><button class="blue sixty">Install Now</button></a>
+          {% endif %}
+          <div class="sp-20"></div>
+          <div class="sp-20 hide-sm"></div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-7 col-lg-8 pad-xs-0 pad-sm-20 ani">
+        <h4>{{ pricing-three[2] }}</h4>
+          {% if pricing-three[3] %}<p class="small">{{ pricing-three[3] }}</p>{% endif %}
+          {% if pricing-three[4] %}<p class="small">{{ pricing-three[4] }}</p>{% endif %}
+          {% if pricing-three[5] %}<p class="small">{{ pricing-three[5] }}</p>{% endif %}
+          {% if pricing-three[6] %}<p class="small">{{ pricing-three[6] }}</p>{% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if pricing-four !=blank %}
+    <div class="row ani seq pad-xs-0 pad-sm-20">
+      <div class="sp-20"></div>
+      <div class="sp-10 hide-sm"></div>
+      <div class="col-xs-12 borderbottom ani"></div>
+      <div class="sp-20"></div>
+      <div class="sp-20 hide-sm"></div>
+    </div>
+    {% endif %}
+
+    {% if pricing-four !=blank %}
+    <div class="row">
+      <div class="sp-20 show-sm"></div>
+      <div class="col-xs-12 col-md-5 col-lg-4 pad-xs-0 pad-sm-20 between-xs flex column-md ani">
+        <div>
+          <h3 class="no-margin-bottom">{{ pricing-four[0] }}</h3>
+          <div class="sp-10"></div>
+          <p class="small blue-text">{{ pricing-four[1] }}</p>
+          <div class="sp-20"></div>
+        </div>
+        <div>
+          {% if pricing-four[1] contains 'POA' %}
+            <a href="mailto:{{ settings.appenquiryemail }}" class="js-no-transition"><button class="blue sixty">Enquire Now</button></a>
+          {% else %}
+            <a href="{{ appstore }}" class="js-no-transition"><button class="blue sixty">Install Now</button></a>
+          {% endif %}
+          <div class="sp-20"></div>
+          <div class="sp-20 hide-sm"></div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-7 col-lg-8 pad-xs-0 pad-sm-20 ani">
+        <h4>{{ pricing-four[2] }}</h4>
+          {% if pricing-four[3] %}<p class="small">{{ pricing-four[3] }}</p>{% endif %}
+          {% if pricing-four[4] %}<p class="small">{{ pricing-four[4] }}</p>{% endif %}
+          {% if pricing-four[5] %}<p class="small">{{ pricing-four[5] }}</p>{% endif %}
+          {% if pricing-four[6] %}<p class="small">{{ pricing-four[6] }}</p>{% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="sp-20"></div>
+</div>
+
+{% comment %}
+<div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
+
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+
+  {% for image in product.images %}
+    {% capture wrapper_class %}
+      {%- unless featured_image == image -%}
+        hide
+      {%- endunless -%}
+    {% endcapture %}
+
+    {% include 'responsive-image' with
+      image: image,
+      max_width: 700,
+      max_height: 800,
+      image_attributes: "data-product-featured-image",
+      wrapper_class: wrapper_class,
+      wrapper_attributes: "data-product-image-wrapper",
+    %}
+  {% endfor %}
+
+  {% if product.images.size > 1 %}
+    <ul>
+      {% for image in product.images %}
+        <li>
+          <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail>
+            <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <h1>{{ product.title }}</h1>
+  <p>{{ product.vendor }}</p>
+
+
+  <form action="/cart/add" method="post" enctype="multipart/form-data">
+    {% unless product.has_only_default_variant %}
+      {% for option in product.options_with_values %}
+        <div class="selector-wrapper js">
+          <label for="SingleOptionSelector-{{ forloop.index0 }}">
+            {{ option.name }}
+          </label>
+
+          <select
+            id="SingleOptionSelector-{{ forloop.index0 }}"
+            data-single-option-selector
+            data-index="option{{ option.position }}">
+            {% for value in option.values %}
+              <option
+                value="{{ value | escape }}"
+                {% if option.selected_value == value %}selected="selected"{% endif %}>
+                  {{ value }}
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+      {% endfor %}
+    {% endunless %}
+
+    <select name="id" class="no-js" data-product-select>
+      {% for variant in product.variants %}
+        <option
+          {% if variant == current_variant %}selected="selected"{% endif %}
+          {% unless variant.available %}disabled="disabled"{% endunless %}
+          value="{{ variant.id }}">
+            {{ variant.title }}
+        </option>
+      {% endfor %}
+    </select>
+
+    <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+    <input type="number" id="Quantity" name="quantity" value="1" min="1">
+
+    <div data-price-wrapper>
+      <span data-product-price>
+        {{ current_variant.price | money }}
+      </span>
+
+      {% if product.compare_at_price_max > product.price %}
+        <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+        <s data-compare-price>
+          {% if current_variant.compare_at_price > current_variant.price %}
+            {{ current_variant.compare_at_price | money }}
+          {% endif %}
+        </s>
+      {% endif %}
+    </div>
+
+    <button
+      type="submit"
+      name="add"
+      data-add-to-cart
+      {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+        <span data-add-to-cart-text>
+          {% if current_variant.available %}
+            {{ 'products.product.add_to_cart' | t }}
+          {% else %}
+            {{ 'products.product.sold_out' | t }}
+          {% endif %}
+        </span>
+    </button>
+  </form>
+
+  <div class="rte">
+    {{ product.description }}
+  </div>
+
+  {% if section.settings.show_share_buttons %}
+    {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+  {% endif %}
+
+  {% unless product == empty %}
+    <script type="application/json" data-product-json>
+      {{ product | json }}
+    </script>
+  {% endunless %}
+</div>
+
+{% endcomment %}
+
+{% schema %}
+  {
+    "name": "Product pages",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_share_buttons",
+        "label": "Show social sharing buttons",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

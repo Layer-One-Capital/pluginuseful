@@ -1,0 +1,44 @@
+<div class="blue">
+  <div class="page-width relative">
+    <div class="row center-xs pad-xs-60 pad-sm-80 pad-top-bottom">
+      <div class="col-xs-12 white-text">
+          <h3>{{ section.settings.subscribe_text }}</h3>
+      </div>
+      <div class="sp-20"></div>
+      <div class="col-xs-12 col-sm-8 col-md-5 col-lg-5">
+        {% form 'customer' %}
+        <div class="row">
+          <div class="col-xs-12 relative subscribe">
+            <input id="contact_tags" name="contact[tags]" type="hidden" value="prospect,newsletter" />
+            <input id="contact_email" name="contact[email]" type="text" placeholder="{{ section.settings.placeholder_text }}"/>
+            <input class="submit" type="submit" />
+          </div>
+        </div>
+        {% endform %}
+      </div>
+      <div class="sp-10"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Newsletter Subscribe",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subscribe_text",
+        "label": "Subscribe Text"
+      },
+      {
+        "type": "text",
+        "id": "placeholder_text",
+        "label": "Placeholder Text"
+      }
+    ],
+    "presets": [{
+      "name": "Newsletter Subscribe",
+      "category": "Text"
+    }]
+  }
+{% endschema %}
