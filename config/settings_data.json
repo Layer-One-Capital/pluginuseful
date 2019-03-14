@@ -5,13 +5,13 @@
     "color_main_bg": "#fff",
     "font_heading": "helvetica_n4",
     "font_body": "helvetica_n4",
-    "share_image": "",
+    "share_image": "shopify:\/\/shop_images\/Screen_Shot_2018-04-30_at_13.26.08.png",
     "social_sharing_blog": true,
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
-    "social_twitter_link": "",
-    "social_facebook_link": "",
+    "social_twitter_link": "https:\/\/twitter.com\/pluginuseful",
+    "social_facebook_link": "https:\/\/facebook.com\/pluginuseful",
     "social_pinterest_link": "",
     "social_instagram_link": "",
     "social_snapchat_link": "",
@@ -27,7 +27,7 @@
     "nojobslink": "mailto:help@pluginuseful.com",
     "appenquiryemail": "william@pluginuseful.com",
     "company_info": "Plug in Useful is a trade name of Pemberton Rank Ltd., a company registered in England 7341337",
-    "copyright": "©2018 Pemberton Rank Ltd.",
+    "copyright": "©2019 Pemberton Rank Ltd.",
     "checkout_header_image": "",
     "checkout_logo_image": "",
     "checkout_logo_position": "left",
@@ -146,7 +146,7 @@
       "subscribe": {
         "type": "subscribe",
         "settings": {
-          "subscribe_text": "Sign up for our actually useful news",
+          "subscribe_text": "Sign up for our Actually Useful news",
           "placeholder_text": "Email Address"
         }
       },
@@ -177,7 +177,7 @@
       "about-content": {
         "type": "about-content",
         "settings": {
-          "image": "shopify:\/\/shop_images\/team.png",
+          "image": "shopify:\/\/shop_images\/team_f9057a61-1564-4442-a92c-86d368f017a8.png",
           "heading": "A small team helping shop owners solve their problems with useful apps and services.",
           "text": "<p>We like talking to customers, listening and learning. At the same time we're clear in saying what we think and sharing what we've learnt: strong opinions, weakly held.<\/p>"
         }
