@@ -1,5 +1,10 @@
 {
   "current": {
+    "pluginseo_pageTitleEnableAppender": true,
+    "pluginseo_pageTitleAppenderTemplate": "| Best Shopify Apps 2019",
+    "pluginseo_pageTitleAppenderTargetLength": "70",
+    "pluginseo_pageTitleProductTemplate": "%% product.title %% | Useful Free & Paid Apps",
+    "pluginseo_pageTitleArticleTemplate": "%% article.title %% | Learn How To Be Successful On Shopify",
     "color_accent": "#c4cdd5",
     "color_body_text": "#161d25",
     "color_main_bg": "#fff",
@@ -25,7 +30,7 @@
     "nojobsheadline": "Currently no jobs",
     "nojobsbutton": "Send us your CV",
     "nojobslink": "mailto:help@pluginuseful.com",
-    "appenquiryemail": "william@pluginuseful.com",
+    "appenquiryemail": "help@pluginuseful.com",
     "company_info": "Plug in Useful is a trade name of Pemberton Rank Ltd., a company registered in England 7341337",
     "copyright": "©2019 Pemberton Rank Ltd.",
     "checkout_header_image": "",

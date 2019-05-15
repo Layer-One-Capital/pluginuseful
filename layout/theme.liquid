@@ -19,6 +19,7 @@
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
   {%- endif -%}
 
+  {%- comment -%}
   {%- capture seo_title -%}
     {{ page_title }}
     {%- if current_tags -%}
@@ -37,6 +38,9 @@
   {%- if page_description -%}
     <meta name="description" content="{{ page_description | escape }}">
   {%- endif -%}
+  {%- endcomment -%}
+  
+  {% include 'pluginseo' %}
 
   {% include 'social-meta-tags' %}
   {% include 'style-tags', layout: 'theme' %}
@@ -45,8 +49,6 @@
   {% include 'script-tags', layout: 'theme' %}
 
   {{ content_for_header }}
-
-
 
 </head>
 
