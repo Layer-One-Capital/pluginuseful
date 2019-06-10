@@ -441,3 +441,33 @@ https://developers.google.com/search/docs/data-types/sitelinks-searchbox
     }
   }
 </script>
+{%- if settings.pluginseo_structuredDataDisplayLocalBusiness -%}
+  {%- assign localBusinessName = settings.pluginseo_structuredDataBusinessName -%}
+  {%- assign localBusinessUrl = settings.pluginseo_structuredDataShopUrl -%}
+  {%- assign localBusinessTelephone = settings.pluginseo_structuredDataContactPhone -%}
+  {%- assign localBusinessEmail = settings.pluginseo_structuredDataBusinessEmail -%}
+  {%- assign localBusinessStreetAddress = settings.pluginseo_structuredDataStreet -%}
+  {%- assign localBusinessAddressLocality = settings.pluginseo_structuredDataLocality -%}
+  {%- assign localBusinessAddressRegion = settings.pluginseo_structuredDataRegion -%}
+  {%- assign localBusinessAddressCountry = settings.pluginseo_structuredDataCountry -%}
+  {%- assign localBusinessPostalCode = settings.pluginseo_structuredDataPostalCode -%}
+
+  <script data-desc="seo-local-business" type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      {%- if localBusinessName != blank -%}"name": "{{- localBusinessName -}}",{%- endif -%}
+      {%- if localBusinessUrl != blank -%}"url": "{{- localBusinessUrl -}}",{%- endif -%}
+      {%- if localBusinessTelephone != blank -%}"telephone": "{{- localBusinessTelephone -}}",{%- endif -%}
+      {%- if localBusinessEmail != blank -%}"email": "{{- localBusinessEmail -}}",{%- endif -%}
+      "address": {
+        "@type": "PostalAddress"
+        {%- if localBusinessStreetAddress != blank -%},"streetAddress": "{{- localBusinessStreetAddress-}}"{%- endif -%}
+        {%- if localBusinessAddressLocality != blank -%},"addressLocality": "{{- localBusinessAddressLocality -}}"{%- endif -%}
+        {%- if localBusinessAddressRegion != blank -%},"addressRegion": "{{- localBusinessAddressRegion -}}"{%- endif -%}
+        {%- if localBusinessAddressCountry != blank -%},"addressCountry": "{{- localBusinessAddressCountry -}}"{%- endif -%}
+        {%- if localBusinessPostalCode != blank -%},"postalCode": "{{- localBusinessPostalCode -}}"{%- endif -%}
+      }
+    }
+  </script>
+{%- endif -%}

@@ -34,7 +34,7 @@
         "type": "text",
         "id": "pluginseo_pageTitleAppenderTemplate",
         "label": "Append",
-        "default": " | %% shop.name %%"
+        "default": "| %% shop.name %%"
       },
       {
         "type": "text",
@@ -68,43 +68,50 @@
       {
         "type": "text",
         "id": "pluginseo_pageTitlePageTemplate",
-        "label": "Page"
+        "label": "Page",
+        "default": "%% page.title %%"
       },
       {
         "type": "text",
         "id": "pluginseo_pageTitleSearchTemplate",
         "label": "Search",
-        "default": "Buy %% search.terms %% from %% shop.name %%"
+        "default": "Shop %% search.terms %% at %% shop.name %%"
       },
       {
         "type": "text",
         "id": "pluginseo_pageTitleProductTemplate",
-        "label": "Product"
+        "label": "Product",
+        "default": "%% product.title %%%% product.selected_variant.title || prepend_not_empty: ' ' %%"
       },
       {
         "type": "text",
         "id": "pluginseo_pageTitleCollectionTemplate",
-        "label": "Collection"
+        "label": "Collection",
+        "default": "Shop %% current_tags || join: ', ' || append_not_empty: ' ' %%%% collection.title || escape %% at %% shop.name %%"
       },
       {
         "type": "text",
         "id": "pluginseo_pageTitleCatalogTemplate",
-        "label": "Catalog Page"
+        "label": "Catalog Page",
+        "default": "Browse %% collection.products || map: 'collections' || map: 'title' || uniq || take: '5' || join: ', ' || escape || remove: 'Home page, ' || remove: 'home page, '  || remove: 'Home page' || remove: 'Home page'  %% at %% shop.name %%"
       },
       {
         "type": "text",
         "id": "pluginseo_pageTitleBlogTemplate",
-        "label": "Blog"
+        "label": "Blog",
+        "default": "%% shop.name %% %% blog.title %%%% blog.all_tags || take: '5' || join: ', ' || prepend_not_empty: ' blog: ' || append_not_empty: ' and more' %%"
       },
       {
         "type": "text",
         "id": "pluginseo_pageTitleArticleTemplate",
-        "label": "Article"
+        "label": "Article",
+        "default": "%% article.title %%%% article.tags || take: '3' || join: ', ' || prepend_not_empty: ' | ' || append_not_empty: ' and more' %% | %% shop.name %% %% blog.title %% blog"
       },
       {
         "type": "text",
         "id": "pluginseo_pageTitle404Template",
-        "label": "404"
+        "label": "404",
+        "default": "404: Page Not Found - %% shop.name %%"
       }
     ]
   },
@@ -143,7 +150,7 @@
         "type": "textarea",
         "id": "pluginseo_metaDescriptionDefaultTemplate",
         "label": "Default",
-        "default": "%% page_description %%",
+        "default": "%% page_description || append_not_empty: '.' %%",
         "info": "this template will apply to all blank page types below"
       },
       {
@@ -154,42 +161,50 @@
       {
         "type": "textarea",
         "id": "pluginseo_metaDescriptionPageTemplate",
-        "label": "Page"
+        "label": "Page",
+        "default": "%% page.content || strip_newlines || strip_html || escape || append_not_empty: '.' %% Visit %% shop.name %%"
       },
       {
         "type": "textarea",
         "id": "pluginseo_metaDescriptionSearchTemplate",
-        "label": "Search"
+        "label": "Search",
+        "default": "Find %% search.terms || default: 'it' %% here%% search.results || map: 'title' || take: '3' || join: ', ' || prepend_not_empty: ' including ' || append_not_empty: ' and more' %% at %% shop.name %%"
       },
       {
         "type": "textarea",
         "id": "pluginseo_metaDescriptionProductTemplate",
-        "label": "Product"
+        "label": "Product",
+        "default": "%% product.description || strip_newlines || replace: '.,', ',' || strip_html || escape %%"
       },
       {
         "type": "textarea",
         "id": "pluginseo_metaDescriptionCollectionTemplate",
-        "label": "Collection"
+        "label": "Collection",
+        "default": "%% collection.all_tags || take: '3' || join: ', ' || prepend_not_empty: 'Shop ' || append_not_empty: ' and more ' %%%% collection.title || escape %% at %% shop.name %% %% collection.description || strip_html || strip_newlines || escape || strip %%"
       },
       {
         "type": "textarea",
         "id": "pluginseo_metaDescriptionCatalogTemplate",
-        "label": "Catalog Page"
+        "label": "Catalog Page",
+        "default": "Discover %% collection.products || map: 'title' || uniq || take: '3' || join: ', ' || escape %% and more."
       },
       {
         "type": "textarea",
         "id": "pluginseo_metaDescriptionBlogTemplate",
-        "label": "Blog"
+        "label": "Blog",
+        "default": "%% blog.articles || map: 'title' || take: '3' || join: ', ' || prepend_not_empty: 'Read about ' || append_not_empty: ' and more on the '%%%% shop.name %% %% blog.title %% blog."
       },
       {
         "type": "textarea",
         "id": "pluginseo_metaDescriptionArticleTemplate",
-        "label": "Article"
+        "label": "Article",
+        "default": "%% article.excerpt_or_content || strip_newlines || strip_html || escape %%%% article.tags || take: '6' || join: ', ' || prepend_not_empty: ' Read about ' || append_not_empty: ' and more' %% %% article.title %% on the %% shop.name %% %% blog.title %% blog"
       },
       {
         "type": "textarea",
         "id": "pluginseo_metaDescription404Template",
-        "label": "404"
+        "label": "404",
+        "default": "The page you requested can't be found, please visit %% shop.domain %% instead"
       }
     ]
   },
