@@ -1,5 +1,5 @@
 {% comment %}
-  version: 1.5.0
+  version: 1.7.0
 {% endcomment %}
 
 {%- comment -%}
@@ -16,6 +16,7 @@
 {%- assign pluginseoVerbose = false -%}
 {%- assign pageUnderscoreTitle = 'page' | append: '_' | append: 'title' -%}
 {%- assign pageUnderscoreDescription = 'page' | append: '_' | append: 'description' -%}
+{%- assign rootTemplate = template | split: '.' | first -%}
 
 {%- include 'pluginseo-langify' -%}
 {%- include 'pluginseo-page-title' -%}

@@ -9,7 +9,6 @@
 {%- endcomment -%}
 
 {%- assign hasLangify = false -%}
-{%- assign rootTemplate = template | split: '.' | first -%}
 
 {%- capture langifyGlobal -%}{%- include 'ly-global' -%}{%- endcapture -%}
 {%- unless langifyGlobal contains "Liquid error: Could not find asset snippets/ly-global.liquid" -%}

@@ -50,7 +50,7 @@
         "type": "checkbox",
         "id": "pluginseo_pageTitleTemplateApplyToAll",
         "label": "Also apply templates to manually entered page titles?",
-        "default": false
+        "default": true
       },
       {
         "type": "text",
@@ -62,14 +62,13 @@
       {
         "type": "text",
         "id": "pluginseo_pageTitleIndexTemplate",
-        "label": "Homepage",
-        "default": "%% shop.name %%"
+        "label": "Homepage"
       },
       {
         "type": "text",
         "id": "pluginseo_pageTitlePageTemplate",
         "label": "Page",
-        "default": "%% page.title %%"
+        "default": "%% page_title %%"
       },
       {
         "type": "text",
@@ -144,13 +143,13 @@
         "type": "checkbox",
         "id": "pluginseo_metaDescriptionTemplateApplyToAll",
         "label": "Also apply templates to manually entered meta descriptions?",
-        "default": false
+        "default": true
       },
       {
         "type": "textarea",
         "id": "pluginseo_metaDescriptionDefaultTemplate",
         "label": "Default",
-        "default": "%% page_description || append_not_empty: '.' %%",
+        "default": "%% page_description %%",
         "info": "this template will apply to all blank page types below"
       },
       {
@@ -242,6 +241,46 @@
         "type": "textarea",
         "id": "pluginseo_structuredDataSocialProfileLinks",
         "label": "Social profile links - one URL per line"
+      },
+      {
+        "type": "header",
+        "content": "Reviews"
+      },
+      {
+        "type": "select",
+        "id": "pluginseo_structuredDataReviewApp",
+        "label": "Review App",
+        "default": "autodetect",
+        "options": [
+          {
+            "value": "autodetect",
+            "label": "Auto-Detect"
+          },
+          {
+            "value": "judgeme",
+            "label": "Judge.me"
+          },
+          {
+            "value": "loox",
+            "label": "Loox"
+          },
+          {
+            "value": "opinew",
+            "label": "Opinew"
+          },
+          {
+            "value": "shopify_product_reviews",
+            "label": "Shopify Product Reviews"
+          },
+          {
+            "value": "stamped",
+            "label": "Stamped.io"
+          },
+          {
+            "value": "rivyo",
+            "label": "Rivyo"
+          }
+        ]
       }
     ]
   },
