@@ -251,7 +251,7 @@ https://help.shopify.com/themes/customization/navigation/add-breadcrumbs
           {%- assign sprWorst = sprWorst[1] | split: '" />' -%}
           {%- if sprAverage[0] != blank and sprVotes[0] != blank and sprBest[0] != blank and sprWorst[0] != blank-%}
             "aggregateRating": {
-              "@id": {{ aggregateRatingId }},
+              "@id": "{{ aggregateRatingId }}",
               "@type": "AggregateRating",
               "ratingValue": {{- sprAverage[0] -}},
               "ratingCount": {{- sprVotes[0] -}},
@@ -272,6 +272,7 @@ https://help.shopify.com/themes/customization/navigation/add-breadcrumbs
             {%- if sprRatingValue[0] != blank and sprReviewCount[0] != blank and sprBestRating[0] != blank and sprWorstRating[0] != blank- %}
               "aggregateRating": {
                 "@type": "AggregateRating",
+                "@id": "{{ aggregateRatingId }}",
                 "ratingValue": {{- sprRatingValue[0] -}},
                 "ratingCount": {{- sprReviewCount[0] -}},
                 "reviewCount": {{- sprReviewCount[0] -}},
