@@ -40,25 +40,27 @@
         {%- assign languageDomain = product.url -%}
       {%- endif -%}
     {%- endif -%}
+
   {%- endfor -%}
 
-  {%- if request.host -%}
-    {%- assign host = request.host -%}
-    {%- assign domains = shop.metafields.language_domains -%}
-    {%- for domain in domains -%}
-      {%- assign key = domain | first -%}
-      {%- assign value = domain | last | split: ',' -%}
-      {%- if value contains host -%}
-        {%- assign detectedLanguage = key -%}
-      {%- endif -%}
-    {%- endfor -%}
-    {%- if detectedLanguage == nil -%}
-      {%- assign detectedLanguage = shop.metafields["languages"]["default"] -%}
-    {%- endif -%}
-  {%- else -%}
-    {%- assign detectedLanguage = cart.attributes["language"] -%}
-    {%- if detectedLanguage == nil -%}
-      {%- assign detectedLanguage = shop.metafields["languages"]["default"] -%}
-    {%- endif -%}
-  {%- endif -%}
-{% endif -%}
+  {% if request.host %}
+    {% assign host = request.host %}
+    {% assign domains = shop.metafields.language_domains %}
+    {% for domain in domains %}
+      {% assign key = domain | first %}
+      {% assign value = domain | last | split: ',' %}
+      {% if value contains host %}
+        {% assign detectedLanguage = key %}
+      {% endif %}
+    {% endfor %}
+
+    {% if detectedLanguage == nil %}
+      {% assign detectedLanguage = shop.metafields["languages"]["default"] %}
+    {% endif %}
+  {% else %}
+    {% assign detectedLanguage = cart.attributes["language"] %}
+    {% if detectedLanguage == nil %}
+      {% assign detectedLanguage = shop.metafields["languages"]["default"] %}
+    {% endif %}
+  {% endif %}
+{% endif %}
