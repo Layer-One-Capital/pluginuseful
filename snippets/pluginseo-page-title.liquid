@@ -24,7 +24,7 @@
     <title>[Search page title]</title>
   {%- else -%}
     {%- assign pTF = pTF | append: '-ap' -%}
-    <title>{{ langify_title | strip_html | strip_newlines }} [Append]</title>
+    <title>{{ langify_title | strip_html | strip_newlines }}</title>
   {%- endif -%}
 {%- else -%}
   {%- case rootTemplate -%}
