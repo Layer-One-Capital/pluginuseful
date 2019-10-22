@@ -229,7 +229,17 @@
     "content_for_index": [
       "1543574733305",
       "1543574888668"
-    ]
+    ],
+    "pluginseo_structuredDataDisplayLocalBusiness": false,
+    "pluginseo_structuredDataBusinessName": "Plug in Useful",
+    "pluginseo_structuredDataShopUrl": "https:\/\/www.pluginuseful.com",
+    "pluginseo_structuredDataBusinessEmail": "me@danielsim.co.uk",
+    "pluginseo_structuredDataContactPhone": "+45 23 92 42 41",
+    "pluginseo_structuredDataStreet": "483 Green Lanes",
+    "pluginseo_structuredDataLocality": "London",
+    "pluginseo_structuredDataRegion": "",
+    "pluginseo_structuredDataCountry": "GB",
+    "pluginseo_structuredDataPostalCode": "N13 4BS"
   },
   "presets": {
     "Default": {
