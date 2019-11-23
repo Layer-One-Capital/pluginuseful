@@ -106,7 +106,7 @@ https://help.shopify.com/themes/customization/navigation/add-breadcrumbs
           "position": 2,
           "item": {
             "@id": "{{- shop.url -}}{{- product.url -}}",
-            "name": "{{- productTitle -}}"
+            "name": "{{- productTitle | escape -}}"
           }
         }
       {%- else -%}
@@ -115,7 +115,7 @@ https://help.shopify.com/themes/customization/navigation/add-breadcrumbs
           "position": 1,
           "item": {
             "@id": "{{- shop.url -}}{{- product.url -}}",
-            "name": "{{- productTitle -}}"
+            "name": "{{- productTitle | escape -}}"
           }
         }
       {%- endif -%}
@@ -229,7 +229,7 @@ https://help.shopify.com/themes/customization/navigation/add-breadcrumbs
       "@context": "http://schema.org/",
       "@type": "Product",
       "@id": "{{- canonical_url | append: '#product' -}}",
-      "name": "{{- productTitle -}}",
+      "name": "{{- productTitle | escape -}}",
       "image": "https:{{- product.featured_image | img_url: '450x450' -}}",
       "description": "{{- productDescription | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines | strip | escape -}}",
       "mpn": "{{- product.id -}}",
@@ -386,7 +386,7 @@ https://help.shopify.com/themes/customization/navigation/add-breadcrumbs
                "@type": "ProductModel",
                "@id": "{{- canonical_url | append: '#productModel=' | append: variant.id -}}",
                "url": "{{- shop.url -}}{{- variant.url -}}",
-               "name": "{{- productTitle | append: " " | append: variant.title -}}",
+               "name": "{{- productTitle | append: " " | append: variant.title | escape -}}",
                "mpn": "{{- variant.id -}}",
                {%- if variant.sku -%}
                  "sku": "{{- variant.sku -}}",
