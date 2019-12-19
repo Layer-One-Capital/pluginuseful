@@ -198,7 +198,10 @@ https://help.shopify.com/themes/customization/navigation/add-breadcrumbs
     "name": "{{- shopName -}}",
     "url": "{{- shop.url -}}",
     {%- if settings.pluginseo_structuredDataDisplayLogo == true  -%}
-      "logo": "https:{{- logoUrl -}}",
+      "logo": {
+        "type": "ImageObject",
+        "url": "https:{{- logoUrl -}}"
+      },
       "image": "https:{{- logoUrl -}}",
     {%- endif -%}
     "sameAs": [
